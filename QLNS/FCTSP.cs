@@ -55,9 +55,19 @@ namespace QLNS
             HienThiDLDG(gvCTSP);
         }
 
+        
+       private void btThoat_Click(object sender, EventArgs e)
+       {
+           Close();
+       }
+
+        //Lấy ds sp
+
+
         //private void btThoat_Click(object sender, EventArgs e)
         //{
         //    Close();
         //}
+
     }
 }
