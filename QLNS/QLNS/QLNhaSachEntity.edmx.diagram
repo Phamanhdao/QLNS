@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="21f3a16c2ac34aaeba6476897ded5a9e" Name="Diagram1" ZoomLevel="44">
+        <EntityTypeShape EntityType="QLNhaSachModel.ChiTietDonHang" Width="1.5" PointX="7.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.ChucVu" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.DanhMucSanPham" Width="1.5" PointX="0.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.DonHang" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.KinhNghiem" Width="1.5" PointX="7.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.LaDanhMucSach" Width="1.5" PointX="4.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.LoaiNhanVien" Width="1.5" PointX="0.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.NhaCungCap" Width="1.5" PointX="6.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.NhaCungCap_SanPham" Width="1.5" PointX="5.125" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.NhanVien" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.NhanVien_KinhNghiem" Width="1.5" PointX="5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.SanPham" Width="1.5" PointX="2.625" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QLNhaSachModel.FK__ChiTietDo__IDDon__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__ChiTietDo__IDSan__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__ChucVu__IDLoaiNh__0519C6AF" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__NhanVien__IDChuc__09DE7BCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__LaDanhMuc__IDDan__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__SanPham__IDDanhM__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__DonHang__IDNhanV__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__NhanVien___IDKin__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__LaDanhMuc__IDSac__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__NhanVien__IDLoai__0AD2A005" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__NhaCungCa__IDNha__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__NhaCungCa__IDSan__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__NhanVien___IDNha__1367E606" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
