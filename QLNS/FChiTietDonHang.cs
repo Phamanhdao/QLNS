@@ -16,10 +16,15 @@ namespace QLNS
         public int maDH;
         public int maSP;
         BUS_DonHang busDH;
+        NhanVien nv;
         public FChiTietDonHang()
         {
             InitializeComponent();
             busDH = new BUS_DonHang();
+        }
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
         }
 
         private void HienThiLenDG(int ma)
@@ -60,6 +65,7 @@ namespace QLNS
         private void btThem_Click(object sender, EventArgs e)
         {
             FDatHang f = new FDatHang();
+            f.truyenNV(nv);
             f.maDH = this.maDH;
             f.ShowDialog();
         }
@@ -70,6 +76,7 @@ namespace QLNS
         {
             this.Hide();
             FQLDonHang f = new FQLDonHang();
+            f.truyenNV(nv);
             f.ShowDialog();
             this.Close();
         }

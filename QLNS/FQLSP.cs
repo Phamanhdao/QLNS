@@ -19,10 +19,15 @@ namespace QLNS
         private int maNCC;
         private int maDMSP;
         private bool co = false;
+        NhanVien nv;
         public FQLSP()
         {
             InitializeComponent();
             bSP = new BUS_SanPham();
+        }
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
         }
 
         //
@@ -70,6 +75,7 @@ namespace QLNS
         private void btCTSP_Click(object sender, EventArgs e)
         {
             FCTSP f = new FCTSP();
+            f.truyenNV(nv);
             f.ShowDialog();
             Close();
         }
@@ -82,9 +88,26 @@ namespace QLNS
 
         private void btDangXuat_Click(object sender, EventArgs e)
         {
-            DialogResult thoat = MessageBox.Show("Bạn có chắc muốn thoát không?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-            if (thoat == DialogResult.Yes)
-                Close();
+            this.Hide();
+            if (nv.IDChucVu == 1)
+            {
+                MainQuanLy main = new MainQuanLy();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
+            if (nv.IDChucVu == 2)
+            {
+                MainKeToan main = new MainKeToan();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
+            if (nv.IDChucVu == 3)
+            {
+                MainThuNgan main = new MainThuNgan();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
+            this.Close();
         }
 
         private void cbLoaiSP_SelectedIndexChanged(object sender, EventArgs e)

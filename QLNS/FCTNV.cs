@@ -15,10 +15,16 @@ namespace QLNS
     {
         BUSNhanVien bNV;
         private bool co = false;
+        NhanVien nv;
+
         public FCTNV()
         {
             InitializeComponent();
             bNV = new BUSNhanVien();
+        }
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
         }
 
         public void HienThiDSCTNV()
@@ -292,6 +298,7 @@ namespace QLNS
         {
             this.Hide();
             FQLNV f = new FQLNV();
+            f.truyenNV(nv);
             f.ShowDialog();
             this.Close();
         }

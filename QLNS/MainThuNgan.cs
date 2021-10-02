@@ -12,15 +12,22 @@ namespace QLNS
 {
     public partial class MainThuNgan : Form
     {
+        NhanVien nv;
         public MainThuNgan()
         {
             InitializeComponent();
+        }
+
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
         }
 
         private void btQLDH_Click(object sender, EventArgs e)
         {
             this.Hide();
             FQLDonHang fQLDonHang = new FQLDonHang();
+            fQLDonHang.truyenNV(nv);
             fQLDonHang.ShowDialog();
             this.Close();
         }
@@ -41,6 +48,7 @@ namespace QLNS
         {
             this.Hide();
             FQLSP f = new FQLSP();
+            f.truyenNV(nv);
             f.ShowDialog();
             this.Close();
         }

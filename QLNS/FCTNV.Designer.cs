@@ -110,11 +110,11 @@ namespace QLNS
             // lbTTNV
             // 
             this.lbTTNV.AutoSize = true;
-            this.lbTTNV.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTTNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTTNV.ForeColor = System.Drawing.Color.DarkRed;
             this.lbTTNV.Location = new System.Drawing.Point(198, 25);
             this.lbTTNV.Name = "lbTTNV";
-            this.lbTTNV.Size = new System.Drawing.Size(643, 50);
+            this.lbTTNV.Size = new System.Drawing.Size(583, 39);
             this.lbTTNV.TabIndex = 1;
             this.lbTTNV.Text = "THÔNG TIN CHI TIẾT NHÂN VIÊN";
             this.lbTTNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -381,7 +381,7 @@ namespace QLNS
             this.btTroVe.Name = "btTroVe";
             this.btTroVe.Size = new System.Drawing.Size(107, 70);
             this.btTroVe.TabIndex = 3;
-            this.btTroVe.Text = "Thoát";
+            this.btTroVe.Text = "Trở về";
             this.btTroVe.UseVisualStyleBackColor = false;
             this.btTroVe.Click += new System.EventHandler(this.btTroVe_Click);
             // 

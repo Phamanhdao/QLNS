@@ -178,6 +178,7 @@ namespace QLNS
             this.Name = "FDangNhap";
             this.Text = "FDangNhap";
             this.Load += new System.EventHandler(this.FDangNhap_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FDangNhap_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

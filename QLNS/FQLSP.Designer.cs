@@ -62,11 +62,11 @@ namespace QLNS
             // lbQLNV
             // 
             this.lbQLNV.AutoSize = true;
-            this.lbQLNV.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQLNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQLNV.ForeColor = System.Drawing.Color.DarkRed;
             this.lbQLNV.Location = new System.Drawing.Point(335, 29);
             this.lbQLNV.Name = "lbQLNV";
-            this.lbQLNV.Size = new System.Drawing.Size(414, 49);
+            this.lbQLNV.Size = new System.Drawing.Size(359, 38);
             this.lbQLNV.TabIndex = 1;
             this.lbQLNV.Text = "QUẢN LÝ SẢN PHẨM";
             this.lbQLNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -208,7 +208,7 @@ namespace QLNS
             this.btDangXuat.Name = "btDangXuat";
             this.btDangXuat.Size = new System.Drawing.Size(137, 70);
             this.btDangXuat.TabIndex = 3;
-            this.btDangXuat.Text = "Thoát";
+            this.btDangXuat.Text = "Trở về";
             this.btDangXuat.UseVisualStyleBackColor = false;
             this.btDangXuat.Click += new System.EventHandler(this.btDangXuat_Click);
             // 

@@ -14,11 +14,17 @@ namespace QLNS
     public partial class FSP : Form
     {
         BUS_SanPham bSP;
+        NhanVien nv;
         public FSP()
         {
             InitializeComponent();
             bSP = new BUS_SanPham();
         }
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
+        }
+
         public void HienThiDLDGFSP(DataGridView gv)
         {
             gvSP.DataSource = null;

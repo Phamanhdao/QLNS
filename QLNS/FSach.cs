@@ -15,12 +15,18 @@ namespace QLNS
     {
 
         BUS_SanPham bSP;
+        NhanVien nv;
         public FSach()
         {
             InitializeComponent();
             bSP = new BUS_SanPham();
-
         }
+
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
+        }
+
         //Làm trống các txt
         public void lamRongTXT()
         {

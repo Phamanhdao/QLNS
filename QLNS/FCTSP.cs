@@ -14,24 +14,30 @@ namespace QLNS
     public partial class FCTSP : Form
     {
         BUS_SanPham bSP;
+        NhanVien nv;
         public FCTSP()
         {
             InitializeComponent();
             bSP = new BUS_SanPham();
         }
 
-
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
+        }
         private void btThemNV_Click(object sender, EventArgs e)
         {
             
             if (int.Parse(cbLoaiSP.SelectedValue.ToString()) != 1)
             {
                 FSP f = new FSP();
+                f.truyenNV(nv);
                 f.ShowDialog();
             }
             else
             {
                 FSach f = new FSach();
+                f.truyenNV(nv);
                 f.ShowDialog();
             }
             HienThiDLDG(gvCTSP);
@@ -75,9 +81,11 @@ namespace QLNS
      
         private void btThoat_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
             FQLSP f = new FQLSP();
+            f.truyenNV(nv);
             f.ShowDialog();
+            this.Close();
         }
 
         private void gvCTSP_CellClick(object sender, DataGridViewCellEventArgs e)

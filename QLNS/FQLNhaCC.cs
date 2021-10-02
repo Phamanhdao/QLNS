@@ -16,11 +16,18 @@ namespace QLNS
     {
         BUS_NhaCC busNCC;
         BUS_SanPham busSP;
+        NhanVien nv;
+
         public FQLNhaCC()
         {
             InitializeComponent();
             busNCC = new BUS_NhaCC();
             busSP = new BUS_SanPham();
+        }
+
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
         }
 
         private void HienThiLenDG()
@@ -125,8 +132,24 @@ namespace QLNS
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainQuanLy main = new MainQuanLy();
-            main.ShowDialog();
+            if (nv.IDChucVu == 1)
+            { 
+                MainQuanLy main = new MainQuanLy();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
+            if (nv.IDChucVu == 2)
+            {
+                MainKeToan main = new MainKeToan();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
+            if (nv.IDChucVu == 3)
+            {
+                MainThuNgan main = new MainThuNgan();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
             this.Close();
         }
 

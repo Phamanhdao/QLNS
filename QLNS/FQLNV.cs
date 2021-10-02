@@ -13,6 +13,7 @@ namespace QLNS
 {
     public partial class FQLNV : Form
     {
+        NhanVien nv;
         BUSNhanVien bNV;
         private int maNV, maLoaiNV, maCV;
         private bool co = false;
@@ -22,10 +23,15 @@ namespace QLNS
             bNV = new BUSNhanVien();
         }
 
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
+        }
 
         private void btTaoNV_Click(object sender, EventArgs e)
         {
             FCTNV f = new FCTNV();
+            f.truyenNV(nv);
             f.ShowDialog();
         }
         //Đổ dữ liệu vào datagridview
@@ -108,8 +114,24 @@ namespace QLNS
         private void btTroVe_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainQuanLy main = new MainQuanLy();
-            main.ShowDialog();
+            if (nv.IDChucVu == 1)
+            {
+                MainQuanLy main = new MainQuanLy();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
+            if (nv.IDChucVu == 2)
+            {
+                MainKeToan main = new MainKeToan();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
+            if (nv.IDChucVu == 3)
+            {
+                MainThuNgan main = new MainThuNgan();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
             this.Close();
         }
 

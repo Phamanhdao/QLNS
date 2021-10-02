@@ -14,11 +14,17 @@ namespace QLNS
     public partial class FQLDonHang : Form
     {
         BUS_DonHang busDH;
+        NhanVien nv;
 
         public FQLDonHang()
         {
             InitializeComponent();
             busDH = new BUS_DonHang();
+        }
+
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
         }
 
         private void HienThiLenDG()
@@ -105,8 +111,24 @@ namespace QLNS
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainQuanLy main = new MainQuanLy();
-            main.ShowDialog();
+            if (nv.IDChucVu == 1)
+            {
+                MainQuanLy main = new MainQuanLy();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
+            if (nv.IDChucVu == 2)
+            {
+                MainKeToan main = new MainKeToan();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
+            if (nv.IDChucVu == 3)
+            {
+                MainThuNgan main = new MainThuNgan();
+                main.truyenNV(nv);
+                main.ShowDialog();
+            }
             this.Close();
         }
 
@@ -117,6 +139,7 @@ namespace QLNS
             ma = int.Parse(gVDH.CurrentRow.Cells[0].Value.ToString());
             this.Hide();
             FChiTietDonHang f = new FChiTietDonHang();
+            f.truyenNV(nv);
             f.maDH = ma;
             f.ShowDialog();
         }

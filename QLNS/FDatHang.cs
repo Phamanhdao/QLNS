@@ -20,7 +20,7 @@ namespace QLNS
         BUS_NhaCC busNCC;
         DataTable tbDonHang;
         private bool co = false;
-
+        NhanVien nv;
 
         public FDatHang()
         {
@@ -28,6 +28,11 @@ namespace QLNS
             busDH = new BUS_DonHang();
             busSP = new BUS_SanPham();
             busNCC = new BUS_NhaCC();
+        }
+
+        public void truyenNV(NhanVien n)
+        {
+            nv = n;
         }
 
         private void gVCTDH_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -83,7 +88,6 @@ namespace QLNS
         private void btThoat_Click(object sender, EventArgs e)
         {
            Close();
-
         }
 
         private void btThem_Click(object sender, EventArgs e)

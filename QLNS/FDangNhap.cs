@@ -23,6 +23,15 @@ namespace QLNS
         private void FDangNhap_Load(object sender, EventArgs e)
         {
             busDN.LayDSCV(cbChucVu);
+            this.KeyPreview = true;
+        }
+
+        private void FDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btDangNhap_Click(sender, e);
+            }
         }
 
         private void btDangNhap_Click(object sender, EventArgs e)
@@ -41,16 +50,19 @@ namespace QLNS
                     if (nv.IDChucVu == 1)
                     {
                         MainQuanLy main = new MainQuanLy();
+                        main.truyenNV(nv);
                         main.ShowDialog();
                     }
                     if (nv.IDChucVu == 2)
                     {
                         MainKeToan main = new MainKeToan();
+                        main.truyenNV(nv);
                         main.ShowDialog();
                     }
                     if (nv.IDChucVu == 3)
                     {
                         MainThuNgan main = new MainThuNgan();
+                        main.truyenNV(nv);
                         main.ShowDialog();
                     }
                     this.Close();
