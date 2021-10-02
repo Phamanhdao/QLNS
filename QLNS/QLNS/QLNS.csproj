@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{010B1462-44FE-4E59-9439-D2AB2B2C7A38}</ProjectGuid>
+    <ProjectGuid>{93CA846A-25C0-4B71-9D4C-5BABB433DB57}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>QLNS</RootNamespace>
     <AssemblyName>QLNS</AssemblyName>
@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -44,6 +49,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BUSNhanVien.cs" />
+    <Compile Include="BUS\BUS_DangNhap.cs" />
+    <Compile Include="BUS\BUS_DonHang.cs" />
+    <Compile Include="BUS\BUS_NhaCC.cs" />
     <Compile Include="BUS\BUS_SanPham.cs" />
     <Compile Include="ChiTietDonHang.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
@@ -67,9 +78,18 @@
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\DAONhanVien.cs" />
+    <Compile Include="DAO\DAO_DangNhap.cs" />
+    <Compile Include="DAO\DAO_DonHang.cs" />
+    <Compile Include="DAO\DAO_NhaCC.cs" />
     <Compile Include="DAO\DAO_SanPham.cs" />
     <Compile Include="DonHang.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FChiTietDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FChiTietDonHang.Designer.cs">
+      <DependentUpon>FChiTietDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FCTNV.cs">
       <SubType>Form</SubType>
@@ -80,31 +100,61 @@
     <Compile Include="FCTSP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FCTSP.Designer.cs">
+    <Compile Include="FCTSP.designer.cs">
       <DependentUpon>FCTSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDangNhap.designer.cs">
+      <DependentUpon>FDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDatHang.Designer.cs">
+      <DependentUpon>FDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQLDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQLDonHang.designer.cs">
+      <DependentUpon>FQLDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQLNhaCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQLNhaCC.designer.cs">
+      <DependentUpon>FQLNhaCC.cs</DependentUpon>
     </Compile>
     <Compile Include="FQLNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FQLNV.Designer.cs">
+    <Compile Include="FQLNV.designer.cs">
       <DependentUpon>FQLNV.cs</DependentUpon>
     </Compile>
     <Compile Include="FQLSP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FQLSP.Designer.cs">
+    <Compile Include="FQLSP.designer.cs">
       <DependentUpon>FQLSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FReportSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReportSanPham.Designer.cs">
+      <DependentUpon>FReportSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="FSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FSach.Designer.cs">
+    <Compile Include="FSach.designer.cs">
       <DependentUpon>FSach.cs</DependentUpon>
     </Compile>
     <Compile Include="FSP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FSP.Designer.cs">
+    <Compile Include="FSP.designer.cs">
       <DependentUpon>FSP.cs</DependentUpon>
     </Compile>
     <Compile Include="KinhNghiem.cs">
@@ -115,6 +165,24 @@
     </Compile>
     <Compile Include="LoaiNhanVien.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainKeToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainKeToan.Designer.cs">
+      <DependentUpon>MainKeToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainQuanLy.Designer.cs">
+      <DependentUpon>MainQuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainThuNgan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainThuNgan.Designer.cs">
+      <DependentUpon>MainThuNgan.cs</DependentUpon>
     </Compile>
     <Compile Include="NhaCungCap.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
@@ -145,17 +213,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNhaSachEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Report\CR_SanPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_SanPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SanPham.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="FChiTietDonHang.resx">
+      <DependentUpon>FChiTietDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FCTNV.resx">
       <DependentUpon>FCTNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FCTSP.resx">
       <DependentUpon>FCTSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDangNhap.resx">
+      <DependentUpon>FDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDatHang.resx">
+      <DependentUpon>FDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQLDonHang.resx">
+      <DependentUpon>FQLDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQLNhaCC.resx">
+      <DependentUpon>FQLNhaCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FQLNV.resx">
       <DependentUpon>FQLNV.cs</DependentUpon>
@@ -163,11 +249,23 @@
     <EmbeddedResource Include="FQLSP.resx">
       <DependentUpon>FQLSP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FReportSanPham.resx">
+      <DependentUpon>FReportSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FSach.resx">
       <DependentUpon>FSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FSP.resx">
       <DependentUpon>FSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainKeToan.resx">
+      <DependentUpon>MainKeToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainQuanLy.resx">
+      <DependentUpon>MainQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainThuNgan.resx">
+      <DependentUpon>MainThuNgan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,6 +276,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\CR_SanPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_SanPham.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -195,6 +297,7 @@
     <None Include="QLNhaSachEntity.edmx.diagram">
       <DependentUpon>QLNhaSachEntity.edmx</DependentUpon>
     </None>
+    <None Include="Static\#Beyovn03 SFU Futura ExtraBold.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -210,9 +313,24 @@
       <DependentUpon>QLNhaSachEntity.edmx</DependentUpon>
       <LastGenOutput>QLNhaSachEntity.cs</LastGenOutput>
     </Content>
+    <Content Include="Static\Asset 1%402x.png" />
+    <Content Include="Static\Asset 1%404x.png" />
+    <Content Include="Static\Asset 10%404x.png" />
+    <Content Include="Static\Asset 2.png" />
+    <Content Include="Static\Asset 6%404x.png" />
+    <Content Include="Static\Asset 7%404x.png" />
+    <Content Include="Static\Asset 8%404x.png" />
+    <Content Include="Static\Asset 9%404x.png" />
+    <Content Include="Static\books.ico" />
+    <Content Include="Static\cross.png" />
+    <Content Include="Static\logistics-vector-free-icon-set-03.png" />
+    <Content Include="Static\logistics-vector-free-icon-set-12.png" />
+    <Content Include="Static\logistics-vector-free-icon-set-13.png" />
+    <Content Include="Static\logistics-vector-free-icon-set-18.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

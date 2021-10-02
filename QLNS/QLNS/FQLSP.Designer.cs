@@ -30,6 +30,7 @@ namespace QLNS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FQLSP));
             this.lbQLNV = new System.Windows.Forms.Label();
             this.gBSanPham = new System.Windows.Forms.GroupBox();
             this.txtncc = new System.Windows.Forms.TextBox();
@@ -61,17 +62,18 @@ namespace QLNS
             // lbQLNV
             // 
             this.lbQLNV.AutoSize = true;
-            this.lbQLNV.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQLNV.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQLNV.ForeColor = System.Drawing.Color.DarkRed;
             this.lbQLNV.Location = new System.Drawing.Point(335, 29);
             this.lbQLNV.Name = "lbQLNV";
-            this.lbQLNV.Size = new System.Drawing.Size(388, 49);
+            this.lbQLNV.Size = new System.Drawing.Size(414, 49);
             this.lbQLNV.TabIndex = 1;
-            this.lbQLNV.Text = "Quản Lý Sản Phẩm";
+            this.lbQLNV.Text = "QUẢN LÝ SẢN PHẨM";
             this.lbQLNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gBSanPham
             // 
+            this.gBSanPham.BackColor = System.Drawing.Color.MistyRose;
             this.gBSanPham.Controls.Add(this.txtncc);
             this.gBSanPham.Controls.Add(this.lbmaNCC);
             this.gBSanPham.Controls.Add(this.txtmasp);
@@ -278,6 +280,7 @@ namespace QLNS
             this.Controls.Add(this.gBSanPham);
             this.Controls.Add(this.lbQLNV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FQLSP";

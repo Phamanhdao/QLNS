@@ -71,6 +71,9 @@ namespace QLNS
             bSP.HienThiDSLoaiSPLenCb(cbLoaiSP);
             HienThiDLDG(gvCTSP);
             bSP.HienThiDSNhaCCLenCb(cbNhaCC);
+            txtGiaBan.Enabled = false;
+            txtSL.Enabled = false;
+            txtTenSP.Enabled = false;
         }
      
         private void btThoat_Click(object sender, EventArgs e)
@@ -89,6 +92,10 @@ namespace QLNS
             cbNhaCC.Text = gvCTSP.Rows[e.RowIndex].Cells[5].Value.ToString();
             dPNgayNhapHang.Value = DateTime.Parse(gvCTSP.Rows[e.RowIndex].Cells[6].Value.ToString());
         }
-        
+
+        private void btThem_MouseHover(object sender, EventArgs e)
+        {
+            ttThem.SetToolTip(btThem, "Vui lòng chọn loại sản phẩm muốn tạo mới.");
+        }
     }
 }

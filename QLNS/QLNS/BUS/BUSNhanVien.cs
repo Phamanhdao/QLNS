@@ -1,6 +1,7 @@
 ﻿using QLNS.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace QLNS.BUS
 {
     class BUSNhanVien
     {
-        DAONhanVien dNV; 
+        DAONhanVien dNV;
         public BUSNhanVien()
         {
             dNV = new DAONhanVien();
@@ -49,7 +50,7 @@ namespace QLNS.BUS
             cb.DisplayMember = "TenChucVu";
             cb.ValueMember = "ID";
         }
-        
+
         //Lọc dl theo teennv, loại nv, chức vụ
         public void HienThiDSNVTheoTenNV(DataGridView dg, int maNV)
         {
@@ -68,7 +69,7 @@ namespace QLNS.BUS
             dg.DataSource = dNV.HienThiNVTraCuu(lnv, cv);
         }
         //Thêm nhân viên:
-        public void ThemNV(NhanVien nv, KinhNghiem kn,  NhanVien_KinhNghiem nvkn)
+        public void ThemNV(NhanVien nv, KinhNghiem kn, NhanVien_KinhNghiem nvkn)
         {
             try
             {
@@ -80,6 +81,26 @@ namespace QLNS.BUS
             {
                 MessageBox.Show("Thêm nhân viên thất bại!!!");
             }
+        }
+        //Sửa nhân viên
+        public bool CapNhatNV(NhanVien nv)
+        {
+
+            if (dNV.KiemTraMaNV(nv))
+            {
+                try
+                {
+                    dNV.SuaNV(nv);
+                    return true;
+                }
+                catch (DbUpdateException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return false;
+                }
+            }
+            else
+                return false;
         }
     }
 }

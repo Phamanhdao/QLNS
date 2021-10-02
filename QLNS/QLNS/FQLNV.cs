@@ -22,12 +22,6 @@ namespace QLNS
             bNV = new BUSNhanVien();
         }
 
-        private void btDangXuat_Click(object sender, EventArgs e)
-        {
-            DialogResult thoat = MessageBox.Show("Bạn có chắc muốn thoát không?", "Thoát",MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-            if (thoat == DialogResult.Yes)
-                Close();       
-        }
 
         private void btTaoNV_Click(object sender, EventArgs e)
         {
@@ -84,6 +78,9 @@ namespace QLNS
             txtmaloainv.Text = " ";
             txtmacv.Text = " ";
             co = true;
+            txtmacv.Enabled = false;
+            txtmaloainv.Enabled = false;
+            txtmaNV.Enabled = false;
         }
 
         private void btDSNV_Click(object sender, EventArgs e)
@@ -111,6 +108,14 @@ namespace QLNS
             bNV.HienThiDSNVTheoLNVVaCV(gvNV, maLoaiNV, maCV);
         }
 
+        private void btTroVe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainQuanLy main = new MainQuanLy();
+            main.ShowDialog();
+            this.Close();
+        }
+
         private void cbLoaiNV_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (co)
@@ -126,7 +131,7 @@ namespace QLNS
             {
                 txtmacv.Text = cbChucVu.SelectedValue.ToString();
                 maCV = int.Parse(txtmacv.Text);
-                bNV.HienThiDSNVTheoLoaiNV(gvNV, maCV);
+                bNV.HienThiDSNVTheoCVNV(gvNV, maCV);
             }
         }
 

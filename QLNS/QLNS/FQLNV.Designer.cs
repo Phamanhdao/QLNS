@@ -29,9 +29,10 @@ namespace QLNS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FQLNV));
             this.lbQLNV = new System.Windows.Forms.Label();
             this.btTaoNV = new System.Windows.Forms.Button();
-            this.btDangXuat = new System.Windows.Forms.Button();
+            this.btTroVe = new System.Windows.Forms.Button();
             this.gBChucNang = new System.Windows.Forms.GroupBox();
             this.btDSNV = new System.Windows.Forms.Button();
             this.btTraCuu = new System.Windows.Forms.Button();
@@ -60,13 +61,13 @@ namespace QLNS
             // 
             this.lbQLNV.AutoSize = true;
             this.lbQLNV.BackColor = System.Drawing.Color.Snow;
-            this.lbQLNV.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQLNV.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQLNV.ForeColor = System.Drawing.Color.DarkRed;
             this.lbQLNV.Location = new System.Drawing.Point(308, 25);
             this.lbQLNV.Name = "lbQLNV";
-            this.lbQLNV.Size = new System.Drawing.Size(394, 49);
+            this.lbQLNV.Size = new System.Drawing.Size(424, 49);
             this.lbQLNV.TabIndex = 0;
-            this.lbQLNV.Text = "Quản Lý Nhân Viên";
+            this.lbQLNV.Text = "QUẢN LÝ NHÂN VIÊN";
             this.lbQLNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btTaoNV
@@ -85,29 +86,29 @@ namespace QLNS
             this.btTaoNV.UseVisualStyleBackColor = false;
             this.btTaoNV.Click += new System.EventHandler(this.btTaoNV_Click);
             // 
-            // btDangXuat
+            // btTroVe
             // 
-            this.btDangXuat.AutoSize = true;
-            this.btDangXuat.BackColor = System.Drawing.Color.Firebrick;
-            this.btDangXuat.FlatAppearance.BorderSize = 2;
-            this.btDangXuat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btDangXuat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btDangXuat.Location = new System.Drawing.Point(557, 21);
-            this.btDangXuat.Name = "btDangXuat";
-            this.btDangXuat.Size = new System.Drawing.Size(125, 70);
-            this.btDangXuat.TabIndex = 3;
-            this.btDangXuat.Text = "Thoát";
-            this.btDangXuat.UseVisualStyleBackColor = false;
-            this.btDangXuat.Click += new System.EventHandler(this.btDangXuat_Click);
+            this.btTroVe.AutoSize = true;
+            this.btTroVe.BackColor = System.Drawing.Color.Firebrick;
+            this.btTroVe.FlatAppearance.BorderSize = 2;
+            this.btTroVe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btTroVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTroVe.ForeColor = System.Drawing.Color.White;
+            this.btTroVe.Location = new System.Drawing.Point(557, 21);
+            this.btTroVe.Name = "btTroVe";
+            this.btTroVe.Size = new System.Drawing.Size(125, 70);
+            this.btTroVe.TabIndex = 3;
+            this.btTroVe.Text = "Trở về";
+            this.btTroVe.UseVisualStyleBackColor = false;
+            this.btTroVe.Click += new System.EventHandler(this.btTroVe_Click);
             // 
             // gBChucNang
             // 
             this.gBChucNang.Controls.Add(this.btDSNV);
             this.gBChucNang.Controls.Add(this.btTraCuu);
-            this.gBChucNang.Controls.Add(this.btDangXuat);
+            this.gBChucNang.Controls.Add(this.btTroVe);
             this.gBChucNang.Controls.Add(this.btTaoNV);
-            this.gBChucNang.Location = new System.Drawing.Point(311, 348);
+            this.gBChucNang.Location = new System.Drawing.Point(274, 326);
             this.gBChucNang.Name = "gBChucNang";
             this.gBChucNang.Size = new System.Drawing.Size(696, 105);
             this.gBChucNang.TabIndex = 4;
@@ -147,6 +148,7 @@ namespace QLNS
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.MistyRose;
             this.groupBox1.Controls.Add(this.txtmacv);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -285,7 +287,7 @@ namespace QLNS
             // 
             this.groupBox2.Controls.Add(this.gvNV);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(65, 476);
+            this.groupBox2.Location = new System.Drawing.Point(58, 463);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(942, 339);
             this.groupBox2.TabIndex = 12;
@@ -307,12 +309,14 @@ namespace QLNS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1030, 840);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gBChucNang);
             this.Controls.Add(this.lbQLNV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FQLNV";
@@ -334,7 +338,7 @@ namespace QLNS
 
         private System.Windows.Forms.Label lbQLNV;
         private System.Windows.Forms.Button btTaoNV;
-        private System.Windows.Forms.Button btDangXuat;
+        private System.Windows.Forms.Button btTroVe;
         private System.Windows.Forms.GroupBox gBChucNang;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbMaNV;

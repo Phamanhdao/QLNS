@@ -25,6 +25,7 @@ namespace QLNS
         public string DiaDiem { get; set; }
         public string BangCap { get; set; }
         public System.DateTime ThoiGian { get; set; }
+        public string GhiChu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien_KinhNghiem> NhanVien_KinhNghiem { get; set; }

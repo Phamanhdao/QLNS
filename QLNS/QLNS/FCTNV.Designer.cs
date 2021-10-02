@@ -30,6 +30,7 @@ namespace QLNS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCTNV));
             this.lbTTNV = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCMND = new System.Windows.Forms.TextBox();
@@ -55,7 +56,7 @@ namespace QLNS
             this.lbChucVu = new System.Windows.Forms.Label();
             this.lbTenNV = new System.Windows.Forms.Label();
             this.gBChucNang = new System.Windows.Forms.GroupBox();
-            this.btDangXuat = new System.Windows.Forms.Button();
+            this.btTroVe = new System.Windows.Forms.Button();
             this.btThemNV = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.gvCTNV = new System.Windows.Forms.DataGridView();
@@ -109,13 +110,13 @@ namespace QLNS
             // lbTTNV
             // 
             this.lbTTNV.AutoSize = true;
-            this.lbTTNV.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTTNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTTNV.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbTTNV.Location = new System.Drawing.Point(261, 21);
+            this.lbTTNV.Location = new System.Drawing.Point(198, 25);
             this.lbTTNV.Name = "lbTTNV";
-            this.lbTTNV.Size = new System.Drawing.Size(584, 49);
+            this.lbTTNV.Size = new System.Drawing.Size(583, 39);
             this.lbTTNV.TabIndex = 1;
-            this.lbTTNV.Text = "Thông Tin Chi Tiết Nhân Viên";
+            this.lbTTNV.Text = "THÔNG TIN CHI TIẾT NHÂN VIÊN";
             this.lbTTNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
@@ -158,6 +159,7 @@ namespace QLNS
             this.txtCMND.Size = new System.Drawing.Size(235, 27);
             this.txtCMND.TabIndex = 24;
             this.txtCMND.TextChanged += new System.EventHandler(this.txtCMND_TextChanged);
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
             // lbCMND
             // 
@@ -270,6 +272,7 @@ namespace QLNS
             this.txtSDT.Size = new System.Drawing.Size(235, 27);
             this.txtSDT.TabIndex = 9;
             this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtDiaChi
             // 
@@ -359,7 +362,7 @@ namespace QLNS
             // 
             // gBChucNang
             // 
-            this.gBChucNang.Controls.Add(this.btDangXuat);
+            this.gBChucNang.Controls.Add(this.btTroVe);
             this.gBChucNang.Controls.Add(this.btThemNV);
             this.gBChucNang.Controls.Add(this.btSua);
             this.gBChucNang.Location = new System.Drawing.Point(566, 662);
@@ -368,21 +371,21 @@ namespace QLNS
             this.gBChucNang.TabIndex = 8;
             this.gBChucNang.TabStop = false;
             // 
-            // btDangXuat
+            // btTroVe
             // 
-            this.btDangXuat.AutoSize = true;
-            this.btDangXuat.BackColor = System.Drawing.Color.Firebrick;
-            this.btDangXuat.FlatAppearance.BorderSize = 2;
-            this.btDangXuat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btDangXuat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btDangXuat.Location = new System.Drawing.Point(293, 21);
-            this.btDangXuat.Name = "btDangXuat";
-            this.btDangXuat.Size = new System.Drawing.Size(107, 70);
-            this.btDangXuat.TabIndex = 3;
-            this.btDangXuat.Text = "Thoát";
-            this.btDangXuat.UseVisualStyleBackColor = false;
-            this.btDangXuat.Click += new System.EventHandler(this.btDangXuat_Click);
+            this.btTroVe.AutoSize = true;
+            this.btTroVe.BackColor = System.Drawing.Color.Firebrick;
+            this.btTroVe.FlatAppearance.BorderSize = 2;
+            this.btTroVe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btTroVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTroVe.ForeColor = System.Drawing.Color.White;
+            this.btTroVe.Location = new System.Drawing.Point(293, 21);
+            this.btTroVe.Name = "btTroVe";
+            this.btTroVe.Size = new System.Drawing.Size(107, 70);
+            this.btTroVe.TabIndex = 3;
+            this.btTroVe.Text = "Thoát";
+            this.btTroVe.UseVisualStyleBackColor = false;
+            this.btTroVe.Click += new System.EventHandler(this.btTroVe_Click);
             // 
             // btThemNV
             // 
@@ -414,6 +417,7 @@ namespace QLNS
             this.btSua.TabIndex = 4;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // gvCTNV
             // 
@@ -425,7 +429,7 @@ namespace QLNS
             this.gvCTNV.RowTemplate.Height = 24;
             this.gvCTNV.Size = new System.Drawing.Size(992, 209);
             this.gvCTNV.TabIndex = 9;
-            this.gvCTNV.DoubleClick += new System.EventHandler(this.gvCTNV_DoubleClick);
+            this.gvCTNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCTNV_CellClick);
             // 
             // groupBox2
             // 
@@ -672,6 +676,7 @@ namespace QLNS
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbTTNV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FCTNV";
@@ -726,7 +731,7 @@ namespace QLNS
         private System.Windows.Forms.Label lbChucVu;
         private System.Windows.Forms.Label lbTenNV;
         private System.Windows.Forms.GroupBox gBChucNang;
-        private System.Windows.Forms.Button btDangXuat;
+        private System.Windows.Forms.Button btTroVe;
         private System.Windows.Forms.Button btThemNV;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Label lbGioiTinh;

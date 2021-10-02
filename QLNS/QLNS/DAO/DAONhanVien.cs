@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace QLNS.DAO
 {
-    
     class DAONhanVien
     {
-        QLNhaSachEntities1 db;
+        QLNhaSachEntities db;
         public DAONhanVien()
         {
-            db = new QLNhaSachEntities1();
-           
+            db = new QLNhaSachEntities();
+
         }
         //Lấy danh sách nhân viên ra gvNV
         public dynamic LayDSNV()
@@ -43,12 +42,18 @@ namespace QLNS.DAO
                 s.NhanVien.SDT,
                 s.NhanVien.NgayVaoLam,
                 s.NhanVien.NgaySinh,
+                s.NhanVien.CMND,
+                s.NhanVien.Email,
+                s.NhanVien.DiaChi,
                 s.NhanVien.GioiTinh,
+                s.KinhNghiem.CongViec,
+                s.KinhNghiem.DiaDiem,
+                s.KinhNghiem.BangCap,
+                s.KinhNghiem.ThoiGian,
+                s.KinhNghiem.GhiChu,
                 //
               
-               
-
-            }).ToList();
+        }).ToList();
             return dsnv;
         }
         //Lấy tên, loại, chức vụ nhân viên đổ ra cbb
@@ -89,7 +94,7 @@ namespace QLNS.DAO
             }).ToList();
             return ds;
         }
-        
+
         //Xử lý lọc ds và tra cứu
         // Xử lý lấy dssp theo danh mục sản phẩm:
         public dynamic HienThiNVTheoTen(int maNV)
@@ -122,9 +127,9 @@ namespace QLNS.DAO
             }).ToList();
             return ds;
         }
-        public dynamic HienThiNVTheoCVNV(int maNV)
+        public dynamic HienThiNVTheoCVNV(int maCV)
         {
-            var ds = db.NhanViens.Where(s => s.IDChucVu == maNV).Select(s => new
+            var ds = db.NhanViens.Where(s => s.IDChucVu == maCV).Select(s => new
             {
                 s.ID,
                 s.HoTen,
@@ -162,7 +167,7 @@ namespace QLNS.DAO
             db.SaveChanges();
         }
         //sửa
-        public bool KiemTraMaNV(NhanVien nv)
+        public bool KiemTraMaNV(NhanVien nv )
         {
             NhanVien nvien = db.NhanViens.Find(nv.ID);
             if (nvien != null)
@@ -176,12 +181,20 @@ namespace QLNS.DAO
         public void SuaNV(NhanVien nv)
         {
             NhanVien nvien = db.NhanViens.Find(nv.ID);
-            nv.SDT = nvien.SDT;
-            nv.DiaChi = nvien.DiaChi;
-
+            nvien.ID = nv.ID;
+            nvien.HoTen = nv.HoTen;
+            nvien.IDLoaiNhanVien = nv.IDLoaiNhanVien;
+            nvien.IDChucVu = nv.IDChucVu;
+            nvien.GioiTinh = nv.GioiTinh;
+            nvien.NgaySinh = nv.NgaySinh;
+            nvien.NgayVaoLam = nv.NgayVaoLam;
+            nvien.DiaChi = nv.DiaChi;
+            nvien.Email = nv.Email;
+            nvien.SDT = nv.SDT;
+            nvien.CMND = nv.CMND;
+           
             db.SaveChanges();
 
         }
-
     }
 }

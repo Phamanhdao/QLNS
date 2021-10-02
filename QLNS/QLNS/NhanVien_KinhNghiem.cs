@@ -16,7 +16,7 @@ namespace QLNS
     {
         public int IDNhanVien { get; set; }
         public int IDKinhNghiem { get; set; }
-        public string Ghichu { get; set; }
+        public string GhiChu { get; set; }
     
         public virtual KinhNghiem KinhNghiem { get; set; }
         public virtual NhanVien NhanVien { get; set; }

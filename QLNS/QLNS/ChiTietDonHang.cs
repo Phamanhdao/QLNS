@@ -16,7 +16,6 @@ namespace QLNS
     {
         public int IDDonHang { get; set; }
         public int IDSanPham { get; set; }
-        public System.DateTime NgayTao { get; set; }
         public decimal DonGia { get; set; }
         public int SoLuong { get; set; }
         public Nullable<float> GiamGia { get; set; }
