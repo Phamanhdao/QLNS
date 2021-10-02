@@ -8,10 +8,10 @@ namespace QLNS.DAO
 {
     class DAO_SanPham
     {
-        QLNhaSachEntities1 db;
+        QLNhaSachEntities db;
         public DAO_SanPham()
         {
-            db = new QLNhaSachEntities1();
+            db = new QLNhaSachEntities();
         }
 
         public dynamic LayDSSP()

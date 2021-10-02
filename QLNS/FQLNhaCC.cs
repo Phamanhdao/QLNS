@@ -122,7 +122,7 @@ namespace QLNS
                 MessageBox.Show("Sửa không thành công!!!");
         }
 
-        private void btTroVe_Click(object sender, EventArgs e)
+        private void btThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
             MainQuanLy main = new MainQuanLy();
@@ -132,9 +132,6 @@ namespace QLNS
 
         private void bt_exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FDangNhap dn = new FDangNhap();
-            dn.ShowDialog();
             Close();
         }
 

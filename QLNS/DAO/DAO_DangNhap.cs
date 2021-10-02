@@ -10,17 +10,17 @@ namespace BTL_LTCSDL.DAO
 {
     class DAO_DangNhap
     {
-        QLNhaSachEntities1 db;
+        QLNhaSachEntities db;
         public DAO_DangNhap()
         {
-            db = new QLNhaSachEntities1();
+            db = new QLNhaSachEntities();
         }
-        public dynamic LayDSCV()
+        public dynamic LayDSLNV()
         {
-            var ds = db.ChucVus.Where(s => s.ID == 1 || s.ID == 2 || s.ID == 3).Select(s => new
+            var ds = db.LoaiNhanViens.Select(s => new
             {
                 s.ID,
-                s.TenChucVu,
+                s.TenLoaiNhanVien,
             }).ToList();
             return ds;
         }
@@ -28,7 +28,7 @@ namespace BTL_LTCSDL.DAO
         public bool KiemTraDangNhap(NhanVien nv)
         {
             int? id;
-            id = db.sp_KiemTraDangNhap(nv.IDChucVu, nv.TenDangNhap, nv.MatKhau).FirstOrDefault();
+            id = db.sp_KiemTraDangNhap(nv.IDLoaiNhanVien, nv.TenDangNhap, nv.MatKhau).FirstOrDefault();
             if (id == 1)
                 return true;
             return false;

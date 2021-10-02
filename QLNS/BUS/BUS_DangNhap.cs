@@ -16,10 +16,10 @@ namespace BTL_LTCSDL.BUS
         {
             daoDN = new DAO_DangNhap();
         }
-        public void LayDSCV(ComboBox cb)
+        public void LayDSLNV(ComboBox cb)
         {
-            cb.DataSource = daoDN.LayDSCV();
-            cb.DisplayMember = "TenChucVu";
+            cb.DataSource = daoDN.LayDSLNV();
+            cb.DisplayMember = "TenLoaiNhanVien";
             cb.ValueMember = "ID";
         }
 

@@ -18,7 +18,7 @@ namespace QLNS
         public NhanVien()
         {
             this.DonHangs = new HashSet<DonHang>();
-            this.NhanVien_KinhNghiem = new HashSet<NhanVien_KinhNghiem>();
+            this.KinhNghiems = new HashSet<KinhNghiem>();
         }
     
         public int ID { get; set; }
@@ -40,6 +40,6 @@ namespace QLNS
         public virtual ICollection<DonHang> DonHangs { get; set; }
         public virtual LoaiNhanVien LoaiNhanVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NhanVien_KinhNghiem> NhanVien_KinhNghiem { get; set; }
+        public virtual ICollection<KinhNghiem> KinhNghiems { get; set; }
     }
 }

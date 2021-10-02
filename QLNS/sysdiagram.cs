@@ -12,13 +12,12 @@ namespace QLNS
     using System;
     using System.Collections.Generic;
     
-    public partial class NhanVien_KinhNghiem
+    public partial class sysdiagram
     {
-        public int IDNhanVien { get; set; }
-        public int IDKinhNghiem { get; set; }
-        public string GhiChu { get; set; }
-    
-        public virtual KinhNghiem KinhNghiem { get; set; }
-        public virtual NhanVien NhanVien { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

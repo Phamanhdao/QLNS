@@ -17,7 +17,7 @@ namespace QLNS
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KinhNghiem()
         {
-            this.NhanVien_KinhNghiem = new HashSet<NhanVien_KinhNghiem>();
+            this.NhanViens = new HashSet<NhanVien>();
         }
     
         public int ID { get; set; }
@@ -28,6 +28,6 @@ namespace QLNS
         public string GhiChu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NhanVien_KinhNghiem> NhanVien_KinhNghiem { get; set; }
+        public virtual ICollection<NhanVien> NhanViens { get; set; }
     }
 }
