@@ -29,6 +29,12 @@ namespace QLNS.BUS
             dg.DataSource = dNCC.LayDSNCC();
         }
 
+        public List<NhaCungCap> LayDSNCC()
+        {
+            return dNCC.LayDSNCCReport();
+        }
+
+
         public bool ThemNCC (NhaCungCap ncc)
         {
             try

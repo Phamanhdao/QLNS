@@ -66,6 +66,7 @@ namespace QLNS
             this.gVNCC = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.bt_exit = new System.Windows.Forms.Button();
+            this.btReportSp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -425,12 +426,26 @@ namespace QLNS
             this.bt_exit.UseVisualStyleBackColor = false;
             this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
+            // btReportSp
+            // 
+            this.btReportSp.BackColor = System.Drawing.Color.Maroon;
+            this.btReportSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReportSp.ForeColor = System.Drawing.Color.SeaShell;
+            this.btReportSp.Location = new System.Drawing.Point(66, 302);
+            this.btReportSp.Name = "btReportSp";
+            this.btReportSp.Size = new System.Drawing.Size(194, 47);
+            this.btReportSp.TabIndex = 18;
+            this.btReportSp.Text = "Report Sản Phẩm";
+            this.btReportSp.UseVisualStyleBackColor = false;
+            this.btReportSp.Click += new System.EventHandler(this.btReportSp_Click);
+            // 
             // FQLNhaCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1019, 748);
+            this.Controls.Add(this.btReportSp);
             this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -496,5 +511,6 @@ namespace QLNS
         private System.Windows.Forms.TextBox txtMaNCC;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button bt_exit;
+        private System.Windows.Forms.Button btReportSp;
     }
 }
