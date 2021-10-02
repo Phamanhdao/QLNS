@@ -10,56 +10,33 @@ namespace QLNS.BUS
 {
     class BUS_SanPham
     {
-        //Lien ket DAO
         DAO_SanPham dSP;
+
         public BUS_SanPham()
         {
             dSP = new DAO_SanPham();
         }
 
-        //
-        //Hiển thị data lên DataGridView
-        public void HienThiDSSP(DataGridView dg)
-        {
-            dg.DataSource = dSP.LayDSSP();
-        }
-        //Hiển thị lên cbbox form sp
-        //ds loại sp 
-        public void HienThiDSLoaiSPLenCb(ComboBox cb)
-        {
-            cb.DataSource = dSP.LayDSLoaiSP();
-            cb.DisplayMember = "TenDanhMucSanPham";
-            cb.ValueMember = "ID";
-        }
-        //ds tên sp
-        public void HienThiDSTenSPLenCb(ComboBox cb)
+
+        //San Pham
+        public void HienThiDSTenSP(ComboBox cb)
         {
             cb.DataSource = dSP.LayDSTenSP();
             cb.DisplayMember = "TenSanPham";
             cb.ValueMember = "ID";
         }
-        //ds tên nhà cung cấp
-        public void HienThiDSNhaCCLenCb(ComboBox cb)
+        public void HienThiDSLoaiSP(ComboBox cb)
         {
-            cb.DataSource = dSP.LayDSNhaCC();
-            cb.DisplayMember = "Ten";
+            cb.DataSource = dSP.LayDSLoaiSP();
+            cb.DisplayMember = "TenDanhMucSanPham";
             cb.ValueMember = "ID";
         }
-      
-        //
-        //Thêm sản phẩm
-        public void ThemSP(SanPham sp)
+
+        //Lay san pham theo ma san pham truyen vao, thuc hien ben DAO, dua vao trycatch de bat loi neu cos
+        public NhaCungCap_SanPham LayTTSPNCC(int maSP)
         {
-            try
-            {
-                dSP.ThemSP(sp);
-                MessageBox.Show("Thêm sản phẩm thành công!!!");
-                
-            }
-            catch (Exception)
-            {
-                 MessageBox.Show("Thêm sản phẩm thất bại!!!");
-            }
+            NhaCungCap_SanPham s = dSP.LayTTSPNCC(maSP);
+            return s;
         }
     }
 }

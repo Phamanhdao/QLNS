@@ -8,71 +8,59 @@ namespace QLNS.DAO
 {
     class DAO_SanPham
     {
-        //Lien ket database
         QLNhaSachEntities db;
         public DAO_SanPham()
         {
             db = new QLNhaSachEntities();
         }
-        //
-        //Lấy dữ liệu lên từ database
+
         public dynamic LayDSSP()
         {
-            var dsSP = db.SanPhams.Select(s => new
+            var dsSP = db.NhaCungCap_SanPham.Select(s => new
             {
-                s.ID,
-                s.TenSanPham,
-                s.DanhMucSanPham.TenDanhMucSanPham,
-                s.SoLuongTonKho,
-                s.DonGia,
+                s.SanPham.ID,
+                s.SanPham.TenSanPham,
+                s.SanPham.DanhMucSanPham.TenDanhMucSanPham,
+                s.SanPham.SoLuongTonKho,
+                s.SanPham.DonGia,
+                s.NhaCungCap.Ten,
             }).ToList();
             return dsSP;
         }
-        //
-        //Lấy ds loại sản phẩm
-        public dynamic LayDSLoaiSP()
-        {
 
-            var ds = db.DanhMucSanPhams.Select(s => new
-            {
-                s.ID,
-                s.TenDanhMucSanPham,
-            }).ToList();
-            return ds;
-        }
-        //
-        //Lấy ds tên sp
+        //DAO_SanPham
         public dynamic LayDSTenSP()
         {
-
             var ds = db.SanPhams.Select(s => new
             {
                 s.ID,
-                s.TenSanPham,
+                s.TenSanPham
             }).ToList();
             return ds;
         }
-        //
-        //Lấy danh sách nhà cung cấp sản phẩm
-        public dynamic LayDSNhaCC()
-        {
 
-            var ds = db.NhaCungCaps.Select(s => new
+        public dynamic LayDSLoaiSP()
+        {
+            var ds = db.DanhMucSanPhams.Select(s => new
             {
                 s.ID,
-                s.Ten,
+                s.TenDanhMucSanPham
             }).ToList();
             return ds;
         }
-        //
-        //Thêm sản phẩm
-        public void ThemSP(SanPham sp)
+
+        public SanPham LayTTSP(int maSP) //tra ve nhieu sex laf list sp
         {
-            db.SanPhams.Add(sp);
-            db.SaveChanges();
+            SanPham p = db.SanPhams.FirstOrDefault(s => s.ID == maSP);
+            return p;
         }
-        
-        
+
+        public NhaCungCap_SanPham LayTTSPNCC(int maSP) //tra ve nhieu sex laf list sp
+        {
+            NhaCungCap_SanPham p = db.NhaCungCap_SanPham.FirstOrDefault(s => s.SanPham.ID == maSP);
+            return p;
+        }
+
 
     }
 }
