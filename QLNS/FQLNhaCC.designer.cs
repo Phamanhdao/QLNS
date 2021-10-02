@@ -36,8 +36,6 @@ namespace QLNS
             this.tenNgLHLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtChucVu = new System.Windows.Forms.TextBox();
-            this.txtNgLH = new System.Windows.Forms.TextBox();
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.sdtLabel = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -46,6 +44,8 @@ namespace QLNS
             this.lb = new System.Windows.Forms.Label();
             this.txtMaNCC = new System.Windows.Forms.TextBox();
             this.txtTenNCC = new System.Windows.Forms.TextBox();
+            this.txtChucVu = new System.Windows.Forms.TextBox();
+            this.txtNgLH = new System.Windows.Forms.TextBox();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -66,6 +66,7 @@ namespace QLNS
             this.gVNCC = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.bt_exit = new System.Windows.Forms.Button();
+            this.btReportSp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -142,22 +143,6 @@ namespace QLNS
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà cung cấp:";
             // 
-            // txtChucVu
-            // 
-            this.txtChucVu.Location = new System.Drawing.Point(133, 70);
-            this.txtChucVu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(290, 22);
-            this.txtChucVu.TabIndex = 15;
-            // 
-            // txtNgLH
-            // 
-            this.txtNgLH.Location = new System.Drawing.Point(133, 33);
-            this.txtNgLH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNgLH.Name = "txtNgLH";
-            this.txtNgLH.Size = new System.Drawing.Size(290, 22);
-            this.txtNgLH.TabIndex = 15;
-            // 
             // txtSdt
             // 
             this.txtSdt.Location = new System.Drawing.Point(164, 151);
@@ -224,6 +209,22 @@ namespace QLNS
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(265, 22);
             this.txtTenNCC.TabIndex = 3;
+            // 
+            // txtChucVu
+            // 
+            this.txtChucVu.Location = new System.Drawing.Point(133, 70);
+            this.txtChucVu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Size = new System.Drawing.Size(290, 22);
+            this.txtChucVu.TabIndex = 15;
+            // 
+            // txtNgLH
+            // 
+            this.txtNgLH.Location = new System.Drawing.Point(133, 33);
+            this.txtNgLH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNgLH.Name = "txtNgLH";
+            this.txtNgLH.Size = new System.Drawing.Size(290, 22);
+            this.txtNgLH.TabIndex = 15;
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -426,12 +427,26 @@ namespace QLNS
             this.bt_exit.UseVisualStyleBackColor = false;
             this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
+            // btReportSp
+            // 
+            this.btReportSp.BackColor = System.Drawing.Color.Maroon;
+            this.btReportSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReportSp.ForeColor = System.Drawing.Color.SeaShell;
+            this.btReportSp.Location = new System.Drawing.Point(66, 302);
+            this.btReportSp.Name = "btReportSp";
+            this.btReportSp.Size = new System.Drawing.Size(194, 47);
+            this.btReportSp.TabIndex = 18;
+            this.btReportSp.Text = "Report Sản Phẩm";
+            this.btReportSp.UseVisualStyleBackColor = false;
+            this.btReportSp.Click += new System.EventHandler(this.btReportSp_Click);
+            // 
             // FQLNhaCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1019, 748);
+            this.Controls.Add(this.btReportSp);
             this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -497,5 +512,6 @@ namespace QLNS
         private System.Windows.Forms.TextBox txtMaNCC;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button bt_exit;
+        private System.Windows.Forms.Button btReportSp;
     }
 }

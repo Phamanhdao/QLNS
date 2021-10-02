@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -45,6 +50,8 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -108,6 +115,12 @@
     <Compile Include="FQLNhaCC.designer.cs">
       <DependentUpon>FQLNhaCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FReportSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReportSanPham.Designer.cs">
+      <DependentUpon>FReportSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="KinhNghiem.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
     </Compile>
@@ -167,6 +180,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNhaSachEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Report\CR_SanPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_SanPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SanPham.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
     </Compile>
@@ -187,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FQLNhaCC.resx">
       <DependentUpon>FQLNhaCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReportSanPham.resx">
+      <DependentUpon>FReportSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainChinh.resx">
       <DependentUpon>MainChinh.cs</DependentUpon>
@@ -209,6 +231,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\CR_SanPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_SanPham.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -259,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

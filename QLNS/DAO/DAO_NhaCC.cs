@@ -40,7 +40,15 @@ namespace QLNS.DAO
             }).ToList();
             return ds;
         }
-        
+
+        public List<NhaCungCap> LayDSNCCReport()
+        {
+            var ds = db.NhaCungCaps.Select(s => s).ToList();
+            return ds;
+        }
+
+
+
         public void ThemNCC(NhaCungCap ncc)
         {
             db.NhaCungCaps.Add(ncc);

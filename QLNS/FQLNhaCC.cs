@@ -8,16 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLNS.Report;
 
 namespace QLNS
 {
     public partial class FQLNhaCC : Form
     {
         BUS_NhaCC busNCC;
+        BUS_SanPham busSP;
         public FQLNhaCC()
         {
             InitializeComponent();
             busNCC = new BUS_NhaCC();
+            busSP = new BUS_SanPham();
         }
 
         private void HienThiLenDG()
@@ -130,6 +133,17 @@ namespace QLNS
         private void bt_exit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btReportSp_Click(object sender, EventArgs e)
+        {
+            CR_SanPham r = new CR_SanPham();
+            FReportSanPham f = new FReportSanPham();
+
+            r.SetDataSource(busNCC.LayDSNCC().ToList());
+            f.crystalReportViewer1.ReportSource = r;
+
+            f.Show();
         }
     }
 }
