@@ -45,16 +45,16 @@ namespace QLNS
         private void gVNCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            foreach (DataGridViewRow rw in this.gVNCC.Rows)
+            try
             {
-                for (int i = 0; i < rw.Cells.Count; i++)
+                DataGridViewRow rw = new DataGridViewRow();
+                rw = gVNCC.Rows[e.RowIndex];
+                if (rw.Cells[1].Value is null && rw.Cells[2].Value is null && rw.Cells[3].Value is null && rw.Cells[4].Value is null && rw.Cells[5].Value is null && rw.Cells[6].Value is null)
                 {
-                    if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
-                    {
-                        txtTenNCC.Text = txtDiaChi.Text = txtSdt.Text = txtNgLH.Text = txtChucVu.Text = txtEmail.Text = string.Empty;
-                    }
+                    txtTenNCC.Text = txtDiaChi.Text = txtSdt.Text = txtNgLH.Text = txtChucVu.Text = txtEmail.Text = string.Empty;
                 }
-                if (e.RowIndex >= 0 && e.RowIndex < gVNCC.Rows.Count)
+                else
+                    if (e.RowIndex >= 0 && e.RowIndex < gVNCC.Rows.Count)
                 {
                     txtMaNCC.Enabled = false;
                     txtMaNCC.Text = rw.Cells[0].Value.ToString();
@@ -65,6 +65,10 @@ namespace QLNS
                     txtChucVu.Text = rw.Cells["ChucVuNguoiLienHe"].Value.ToString();
                     txtEmail.Text = rw.Cells["Email"].Value.ToString();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

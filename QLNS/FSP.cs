@@ -24,7 +24,6 @@ namespace QLNS
         {
             nv = n;
         }
-
         public void HienThiDLDGFSP(DataGridView gv)
         {
             gvSP.DataSource = null;
@@ -56,7 +55,7 @@ namespace QLNS
 
         }
 
-       
+
         //Báo lỗi khi bỏ trống txt
         private void txtTenSP_TextChanged(object sender, EventArgs e)
         {
@@ -93,8 +92,10 @@ namespace QLNS
             HienThiDLDGFSP(gvSP);
             bSP.HienThiDSNhaCCLenCb(cbNhaCC);
             bSP.HienThiDSLoaiSPKhongCoSachLenCb(cbLoaiSP);
+            btLuuSP.Enabled = false;
+            btXoa.Enabled = false;
         }
-       
+
 
         private void gvSP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -106,13 +107,16 @@ namespace QLNS
             txtGiaBan.Text = gvSP.Rows[e.RowIndex].Cells[4].Value.ToString();
             cbNhaCC.Text = gvSP.Rows[e.RowIndex].Cells[5].Value.ToString();
             dPNgayNhapHang.Value = DateTime.Parse(gvSP.Rows[e.RowIndex].Cells[6].Value.ToString());
+            
+            btXoa.Enabled = true;
+            
         }
         //Xóa sản phẩm
         private void btXoa_Click(object sender, EventArgs e)
         {
             SanPham sp = new SanPham();
-            sp.ID = int.Parse(txtMasp.Text);
-            if (bSP.XoaSP( sp ))
+            sp.ID = int.Parse(txtMasp.Text.ToString());
+            if (bSP.XoaSP(sp))
             {
                 MessageBox.Show("Xóa sản phẩm thành công!");
                 HienThiDLDGFSP(gvSP);
@@ -120,7 +124,7 @@ namespace QLNS
             else
                 MessageBox.Show("Xóa sản phẩm thất bại!");
             XoaTrongTXT();
-
+            btLuuSP.Enabled = true;
 
         }
 
@@ -131,11 +135,8 @@ namespace QLNS
 
         private void txtGiaBan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Nếu bạn muốn, bạn có thể cho phép nhập số thực với dấu chấm
-            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            //{
-            //    e.Handled = true;
-            //}
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
         public void XoaTrongTXT()
         {
@@ -144,11 +145,17 @@ namespace QLNS
             txtSL.Clear();
             txtTenSP.Clear();
         }
-
+        //Sửa sản phẩm
         private void btSua_Click(object sender, EventArgs e)
         {
             SanPham sp = new SanPham();
-            sp.ID = int.Parse(txtMasp.Text);
+            sp.ID = int.Parse(txtMasp.Text.ToString());
+            sp.TenSanPham = txtTenSP.Text;
+            sp.IDDanhMucSanPham = int.Parse(cbLoaiSP.SelectedValue.ToString());
+            sp.DonGia = int.Parse(txtGiaBan.Text);
+            sp.SoLuongTonKho = int.Parse(txtSL.Text.ToString());
+            sp.NgayNhapHang = dPNgayNhapHang.Value;
+
             if (bSP.CapNhatSP(sp))
             {
                 MessageBox.Show("Sửa sản phẩm thành công!");
@@ -157,6 +164,7 @@ namespace QLNS
             else
                 MessageBox.Show("Sửa sản phẩm thất bại!");
             XoaTrongTXT();
+            btLuuSP.Enabled = true;
         }
 
         private void btLuuSP_Click(object sender, EventArgs e)
@@ -182,6 +190,12 @@ namespace QLNS
                 HienThiDLDGFSP(gvSP);
                 XoaTrongTXT();
             }
+        }
+
+        private void txtSL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

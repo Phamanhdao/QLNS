@@ -120,7 +120,7 @@ namespace QLNS
                     tbDonHang.Rows.Add(r);
                 }
                 cbLoaiSanPham.Text = txtDonGia.Text = cbNCC.Text =  string.Empty;
-                numericSlg.Value = default;
+                numericSlg.Value = 1;
 
             }
             else
@@ -151,9 +151,7 @@ namespace QLNS
 
         private void bt_exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FDangNhap dn = new FDangNhap();
-            dn.ShowDialog();
+            Close();
         }
 
         private void txtGiamGia_KeyPress(object sender, KeyPressEventArgs e)

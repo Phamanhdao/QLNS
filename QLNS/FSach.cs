@@ -123,8 +123,14 @@ namespace QLNS
             {
                 erNamXB.SetError(txtNamXB, "Vui lòng nhập năm xuất bản!");
             }
+
+            if (int.Parse(txtNamXB.TextLength.ToString()) != 4 && int.Parse(txtNamXB.TextLength.ToString()) != 0)
+            {
+                erNamXB.SetError(txtNamXB, "Vui lòng nhập chỉ 4 số");
+            }
             else
                 erNamXB.Clear();
+
         }
 
         private void txtTheLoai_TextChanged(object sender, EventArgs e)
@@ -160,6 +166,25 @@ namespace QLNS
         private void FSach_Load(object sender, EventArgs e)
         {
             bSP.HienThiDSNhaCCLenCb(cbNhaCC);
+
+        }
+
+        private void txtGiaBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtSL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtNamXB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
 
         }
 

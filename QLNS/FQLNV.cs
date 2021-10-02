@@ -84,6 +84,9 @@ namespace QLNS
             txtmaloainv.Text = " ";
             txtmacv.Text = " ";
             co = true;
+            txtmacv.Enabled = false;
+            txtmaloainv.Enabled = false;
+            txtmaNV.Enabled = false;
         }
 
         private void btDSNV_Click(object sender, EventArgs e)

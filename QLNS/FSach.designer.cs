@@ -30,6 +30,7 @@ namespace QLNS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FSach));
             this.lbSach = new System.Windows.Forms.Label();
             this.gBCTSach = new System.Windows.Forms.GroupBox();
             this.dPNgayNhapHang = new System.Windows.Forms.DateTimePicker();
@@ -74,17 +75,18 @@ namespace QLNS
             // lbSach
             // 
             this.lbSach.AutoSize = true;
-            this.lbSach.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSach.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 19.8F, System.Drawing.FontStyle.Bold);
             this.lbSach.ForeColor = System.Drawing.Color.DarkRed;
             this.lbSach.Location = new System.Drawing.Point(341, 35);
             this.lbSach.Name = "lbSach";
-            this.lbSach.Size = new System.Drawing.Size(317, 49);
+            this.lbSach.Size = new System.Drawing.Size(345, 49);
             this.lbSach.TabIndex = 3;
-            this.lbSach.Text = "Thông Tin Sách";
+            this.lbSach.Text = "THÔNG TIN SÁCH";
             this.lbSach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gBCTSach
             // 
+            this.gBCTSach.BackColor = System.Drawing.Color.MistyRose;
             this.gBCTSach.Controls.Add(this.dPNgayNhapHang);
             this.gBCTSach.Controls.Add(this.lbNgayNhapHang);
             this.gBCTSach.Controls.Add(this.cbNhaCC);
@@ -368,6 +370,7 @@ namespace QLNS
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gBCTSach);
             this.Controls.Add(this.lbSach);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FSach";

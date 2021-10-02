@@ -100,7 +100,7 @@
     <Compile Include="FCTSP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FCTSP.designer.cs">
+    <Compile Include="FCTSP.Designer.cs">
       <DependentUpon>FCTSP.cs</DependentUpon>
     </Compile>
     <Compile Include="FDangNhap.cs">

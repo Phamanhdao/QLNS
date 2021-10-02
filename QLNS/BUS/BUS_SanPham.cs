@@ -17,7 +17,6 @@ namespace QLNS.BUS
         {
             dSP = new DAO_SanPham();
         }
-        //
         //Hiển thị data lên DataGridView quản lý sản phẩm
         public void HienThiDSSP(DataGridView dg)
         {
@@ -97,7 +96,7 @@ namespace QLNS.BUS
 
         //Xử lý lấy dssp theo loại sản phẩm
 
-       
+
         //Xử lý tra cứu lấy ra dsdp theo dm và nhà cc
         public void HienThiSpTraCuu(DataGridView dg, int mdm, int maNCC)
         {
@@ -111,7 +110,7 @@ namespace QLNS.BUS
             {
                 try
                 {
-                    dSP.XoaSP(s);
+                    dSP.Xoa(s);
                     return true;
                 }
                 catch (DbUpdateException ex)
@@ -155,7 +154,7 @@ namespace QLNS.BUS
             cb.DisplayMember = "TenSanPham";
             cb.ValueMember = "ID";
         }
-       
+
 
         //Lay san pham theo ma san pham truyen vao, thuc hien ben DAO, dua vao trycatch de bat loi neu cos
         public NhaCungCap_SanPham LayTTSPNCC(int maSP)

@@ -1,6 +1,7 @@
 ﻿using QLNS.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,5 +82,32 @@ namespace QLNS.BUS
                 MessageBox.Show("Thêm nhân viên thất bại!!!");
             }
         }
+        //Sửa nhân viên
+        public bool CapNhatNV(NhanVien nv)
+        {
+
+            if (dNV.KiemTraMaNV(nv))
+            {
+                try
+                {
+                    dNV.SuaNV(nv);
+                    return true;
+                }
+                catch (DbUpdateException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return false;
+                }
+            }
+            else
+                return false;
+        }
+        public void HienThiNVBanHang(ComboBox cb)
+        {
+            cb.DataSource = dNV.LayNVBanHang();
+            cb.DisplayMember = "HoTen";
+            cb.ValueMember = "ID";
+        }
     }
 }
+

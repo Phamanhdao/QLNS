@@ -13,6 +13,7 @@ namespace QLNS
 {
     public partial class FQLDonHang : Form
     {
+        BUSNhanVien busNV;
         BUS_DonHang busDH;
         NhanVien nv;
 
@@ -20,6 +21,7 @@ namespace QLNS
         {
             InitializeComponent();
             busDH = new BUS_DonHang();
+            busNV = new BUSNhanVien();
         }
 
         public void truyenNV(NhanVien n)
@@ -39,7 +41,7 @@ namespace QLNS
         private void FQLDonHang_Load(object sender, EventArgs e)
         {
             HienThiLenDG();
-            busDH.HienThiDSNV(cbNhanVien);
+            busNV.HienThiNVBanHang(cbNhanVien);
             dtpNgayDatHang.MaxDate = DateTime.Now;/*
             int dayofmonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
             dtpNgayDatHang.MaxDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, dayofmonth);*/

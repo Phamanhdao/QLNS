@@ -113,8 +113,12 @@ namespace QLNS.DAO
         public void SuaSP(SanPham sp)
         {
             SanPham sanpham = db.SanPhams.Find(sp.ID);
+
+            sanpham.TenSanPham = sp.TenSanPham;
+            sanpham.IDDanhMucSanPham = sp.IDDanhMucSanPham;
             sanpham.DonGia = sp.DonGia;
             sanpham.SoLuongTonKho = sp.SoLuongTonKho;
+            sanpham.NgayNhapHang = sp.NgayNhapHang;
 
             db.SaveChanges();
 
@@ -164,7 +168,7 @@ namespace QLNS.DAO
 
         //ktra sp xóa
 
-        public void XoaSP(SanPham sp)
+        public void Xoa(SanPham sp)
         {
             SanPham sanpham = db.SanPhams.Find(sp.ID);
             db.SanPhams.Remove(sanpham);

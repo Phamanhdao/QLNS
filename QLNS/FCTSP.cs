@@ -27,7 +27,7 @@ namespace QLNS
         }
         private void btThemNV_Click(object sender, EventArgs e)
         {
-            
+
             if (int.Parse(cbLoaiSP.SelectedValue.ToString()) != 1)
             {
                 FSP f = new FSP();
@@ -42,13 +42,13 @@ namespace QLNS
             }
             HienThiDLDG(gvCTSP);
         }
-        public void HienThiDLDG(DataGridView gv )
+        public void HienThiDLDG(DataGridView gv)
         {
             gvCTSP.DataSource = null;
             bSP.HienThiDSSPDGCTSP(gvCTSP);
             //Định nghĩa lại các cột trong DataGridView
             gvCTSP.Columns[0].Width = (int)(gvCTSP.Width * 0.15);
-            gvCTSP.Columns[1].Width = (int) (gvCTSP.Width * 0.2);
+            gvCTSP.Columns[1].Width = (int)(gvCTSP.Width * 0.2);
             gvCTSP.Columns[2].Width = (int)(gvCTSP.Width * 0.2);
             gvCTSP.Columns[3].Width = (int)(gvCTSP.Width * 0.2);
             gvCTSP.Columns[4].Width = (int)(gvCTSP.Width * 0.2);
@@ -61,7 +61,7 @@ namespace QLNS
             gvCTSP.Columns[4].HeaderText = "Đơn giá";
             gvCTSP.Columns[5].HeaderText = "Tên nhà cung cấp";
             gvCTSP.Columns[6].HeaderText = "Ngày nhập hàng";
-            
+
             //Căn giữa, chỉnh font
             gvCTSP.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 10, FontStyle.Bold);
             gvCTSP.RowsDefaultCellStyle.Font = new Font("Times New Roman", 9, FontStyle.Regular);
@@ -70,15 +70,18 @@ namespace QLNS
             //Tô nền header datagridview.
             gvCTSP.EnableHeadersVisualStyles = false;
             gvCTSP.ColumnHeadersDefaultCellStyle.BackColor = Color.Coral;
-           
+
         }
         private void FCTSP_Load(object sender, EventArgs e)
         {
             bSP.HienThiDSLoaiSPLenCb(cbLoaiSP);
             HienThiDLDG(gvCTSP);
             bSP.HienThiDSNhaCCLenCb(cbNhaCC);
+            txtGiaBan.Enabled = false;
+            txtSL.Enabled = false;
+            txtTenSP.Enabled = false;
         }
-     
+
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -97,6 +100,10 @@ namespace QLNS
             cbNhaCC.Text = gvCTSP.Rows[e.RowIndex].Cells[5].Value.ToString();
             dPNgayNhapHang.Value = DateTime.Parse(gvCTSP.Rows[e.RowIndex].Cells[6].Value.ToString());
         }
-        
+
+        private void btThem_MouseHover(object sender, EventArgs e)
+        {
+            ttThem.SetToolTip(btThem, "Vui lòng chọn loại sản phẩm muốn tạo mới.");
+        }
     }
 }

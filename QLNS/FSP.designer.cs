@@ -30,6 +30,7 @@ namespace QLNS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FSP));
             this.lbCTSP = new System.Windows.Forms.Label();
             this.gBCTSP = new System.Windows.Forms.GroupBox();
             this.txtMasp = new System.Windows.Forms.TextBox();
@@ -68,17 +69,18 @@ namespace QLNS
             // lbCTSP
             // 
             this.lbCTSP.AutoSize = true;
-            this.lbCTSP.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCTSP.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 19.8F, System.Drawing.FontStyle.Bold);
             this.lbCTSP.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbCTSP.Location = new System.Drawing.Point(331, 24);
+            this.lbCTSP.Location = new System.Drawing.Point(338, 31);
             this.lbCTSP.Name = "lbCTSP";
-            this.lbCTSP.Size = new System.Drawing.Size(417, 49);
+            this.lbCTSP.Size = new System.Drawing.Size(407, 49);
             this.lbCTSP.TabIndex = 3;
             this.lbCTSP.Text = "Thông Tin Sản Phẩm";
             this.lbCTSP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gBCTSP
             // 
+            this.gBCTSP.BackColor = System.Drawing.Color.MistyRose;
             this.gBCTSP.Controls.Add(this.txtMasp);
             this.gBCTSP.Controls.Add(this.label1);
             this.gBCTSP.Controls.Add(this.cbNhaCC);
@@ -188,6 +190,7 @@ namespace QLNS
             // 
             // cbLoaiSP
             // 
+            this.cbLoaiSP.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cbLoaiSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiSP.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiSP.FormattingEnabled = true;
@@ -360,6 +363,7 @@ namespace QLNS
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gBCTSP);
             this.Controls.Add(this.lbCTSP);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FSP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FSP";

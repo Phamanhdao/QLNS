@@ -29,6 +29,7 @@ namespace QLNS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCTSP));
             this.lbCTSP = new System.Windows.Forms.Label();
             this.gBCTSP = new System.Windows.Forms.GroupBox();
@@ -49,6 +50,7 @@ namespace QLNS
             this.btThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gvCTSP = new System.Windows.Forms.DataGridView();
+            this.ttThem = new System.Windows.Forms.ToolTip(this.components);
             this.gBCTSP.SuspendLayout();
             this.gBChucNang.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,11 +60,11 @@ namespace QLNS
             // lbCTSP
             // 
             this.lbCTSP.AutoSize = true;
-            this.lbCTSP.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCTSP.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 19.8F, System.Drawing.FontStyle.Bold);
             this.lbCTSP.ForeColor = System.Drawing.Color.DarkRed;
             this.lbCTSP.Location = new System.Drawing.Point(298, 31);
             this.lbCTSP.Name = "lbCTSP";
-            this.lbCTSP.Size = new System.Drawing.Size(402, 50);
+            this.lbCTSP.Size = new System.Drawing.Size(392, 49);
             this.lbCTSP.TabIndex = 2;
             this.lbCTSP.Text = "CHI TIẾT SẢN PHẨM";
             this.lbCTSP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -206,9 +208,9 @@ namespace QLNS
             // 
             this.gBChucNang.Controls.Add(this.btThoat);
             this.gBChucNang.Controls.Add(this.btThem);
-            this.gBChucNang.Location = new System.Drawing.Point(713, 420);
+            this.gBChucNang.Location = new System.Drawing.Point(663, 423);
             this.gBChucNang.Name = "gBChucNang";
-            this.gBChucNang.Size = new System.Drawing.Size(289, 105);
+            this.gBChucNang.Size = new System.Drawing.Size(298, 105);
             this.gBChucNang.TabIndex = 9;
             this.gBChucNang.TabStop = false;
             // 
@@ -221,7 +223,7 @@ namespace QLNS
             this.btThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThoat.ForeColor = System.Drawing.Color.White;
-            this.btThoat.Location = new System.Drawing.Point(155, 21);
+            this.btThoat.Location = new System.Drawing.Point(156, 21);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(119, 70);
             this.btThoat.TabIndex = 3;
@@ -244,6 +246,7 @@ namespace QLNS
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = false;
             this.btThem.Click += new System.EventHandler(this.btThemNV_Click);
+            this.btThem.MouseHover += new System.EventHandler(this.btThem_MouseHover);
             // 
             // groupBox2
             // 
@@ -318,5 +321,6 @@ namespace QLNS
         private System.Windows.Forms.DataGridView gvCTSP;
         private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.ComboBox cbNhaCC;
+        private System.Windows.Forms.ToolTip ttThem;
     }
 }

@@ -62,6 +62,8 @@ namespace QLNS
         }
         private void FQLSP_Load(object sender, EventArgs e)
         {
+            txtmasp.Enabled = false;
+            txtncc.Enabled = false;
             HienThiDLDG();
             bSP.HienThiDSLoaiSPLenCb(cbLoaiSP);
             bSP.HienThiDSNhaCCLenCb(cbNCC);

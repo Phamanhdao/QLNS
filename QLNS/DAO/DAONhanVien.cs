@@ -42,11 +42,15 @@ namespace QLNS.DAO
                 s.NhanVien.SDT,
                 s.NhanVien.NgayVaoLam,
                 s.NhanVien.NgaySinh,
+                s.NhanVien.CMND,
+                s.NhanVien.Email,
+                s.NhanVien.DiaChi,
                 s.NhanVien.GioiTinh,
-                //
-
-
-
+                s.KinhNghiem.CongViec,
+                s.KinhNghiem.DiaDiem,
+                s.KinhNghiem.BangCap,
+                s.KinhNghiem.ThoiGian,
+                s.KinhNghiem.GhiChu,
             }).ToList();
             return dsnv;
         }
@@ -175,11 +179,27 @@ namespace QLNS.DAO
         public void SuaNV(NhanVien nv)
         {
             NhanVien nvien = db.NhanViens.Find(nv.ID);
-            nv.SDT = nvien.SDT;
-            nv.DiaChi = nvien.DiaChi;
-
+            nvien.ID = nv.ID;
+            nvien.HoTen = nv.HoTen;
+            nvien.IDLoaiNhanVien = nv.IDLoaiNhanVien;
+            nvien.IDChucVu = nv.IDChucVu;
+            nvien.GioiTinh = nv.GioiTinh;
+            nvien.NgaySinh = nv.NgaySinh;
+            nvien.NgayVaoLam = nv.NgayVaoLam;
+            nvien.DiaChi = nv.DiaChi;
+            nvien.Email = nv.Email;
+            nvien.SDT = nv.SDT;
+            nvien.CMND = nv.CMND;
             db.SaveChanges();
-
+        }
+        public dynamic LayNVBanHang()
+        {
+            var ds = db.NhanViens.Where(s => s.IDChucVu == 1 || s.IDChucVu == 2 || s.IDChucVu == 3).Select(s => new
+            {
+                s.ID,
+                s.HoTen,
+            }).ToList();
+            return ds;
         }
     }
 }
