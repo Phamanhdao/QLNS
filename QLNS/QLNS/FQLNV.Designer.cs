@@ -60,11 +60,11 @@ namespace QLNS
             // 
             this.lbQLNV.AutoSize = true;
             this.lbQLNV.BackColor = System.Drawing.Color.Snow;
-            this.lbQLNV.Font = new System.Drawing.Font("Georgia", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQLNV.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQLNV.ForeColor = System.Drawing.Color.DarkRed;
             this.lbQLNV.Location = new System.Drawing.Point(308, 25);
             this.lbQLNV.Name = "lbQLNV";
-            this.lbQLNV.Size = new System.Drawing.Size(440, 48);
+            this.lbQLNV.Size = new System.Drawing.Size(394, 49);
             this.lbQLNV.TabIndex = 0;
             this.lbQLNV.Text = "Quản Lý Nhân Viên";
             this.lbQLNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

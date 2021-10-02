@@ -37,11 +37,11 @@ namespace QLNS
             gvCTNV.Columns[5].HeaderText = "Ngày vào làm";
             gvCTNV.Columns[6].HeaderText = "Ngày sinh";
             gvCTNV.Columns[7].HeaderText = "Giới tính";
-            gvCTNV.Columns[8].HeaderText = "Công việc";
-            gvCTNV.Columns[9].HeaderText = "Địa điểm";
-            gvCTNV.Columns[10].HeaderText = "Bằng cấp";
-            gvCTNV.Columns[11].HeaderText = "Thời gian làm";
-            gvCTNV.Columns[12].HeaderText = "Ghi chú";
+            //
+            gvCTNV.Columns[8].HeaderText = "Địa chỉ";
+            gvCTNV.Columns[9].HeaderText = "CMND";
+            gvCTNV.Columns[10].HeaderText = "Email";
+
             gvCTNV.Columns[0].Width = (int)(gvCTNV.Width * 0.2);
             gvCTNV.Columns[1].Width = (int)(gvCTNV.Width * 0.25);
             gvCTNV.Columns[2].Width = (int)(gvCTNV.Width * 0.2);
@@ -50,11 +50,8 @@ namespace QLNS
             gvCTNV.Columns[5].Width = (int)(gvCTNV.Width * 0.2);
             gvCTNV.Columns[6].Width = (int)(gvCTNV.Width * 0.2);
             gvCTNV.Columns[7].Width = (int)(gvCTNV.Width * 0.2);
-            gvCTNV.Columns[8].Width = (int)(gvCTNV.Width * 0.25);
-            gvCTNV.Columns[9].Width = (int)(gvCTNV.Width * 0.2);
-            gvCTNV.Columns[10].Width = (int)(gvCTNV.Width * 0.2);
-            gvCTNV.Columns[11].Width = (int)(gvCTNV.Width * 0.2);
-            gvCTNV.Columns[12].Width = (int)(gvCTNV.Width * 0.2);
+            
+
             //Căn giữa, tô đậm header 
             gvCTNV.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 10, FontStyle.Bold);
             gvCTNV.RowsDefaultCellStyle.Font = new Font("Times New Roman", 9, FontStyle.Regular);
@@ -71,7 +68,7 @@ namespace QLNS
             gvCTNV.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTNV.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             gvCTNV.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            gvCTNV.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+           
         }
 
         private void FCTNV_Load(object sender, EventArgs e)
@@ -101,68 +98,199 @@ namespace QLNS
                 {
                     txtTenDN.Enabled = false;
                     txtMK.Enabled = false;
-                }    
+                }
+                if (mcv == 1)
+                    bNV.HienThiDSLoaiNVQLLenCb(cbLoaiNV); //Tạo nhân viên là quản lý chỉ thuộc loại toàn thời gian
             }
         }
 
-        private void btThemNV_Click(object sender, EventArgs e)
+
+        private void txtTenNV_TextChanged(object sender, EventArgs e)
         {
-            NhanVien nv = new NhanVien();
-            KinhNghiem kn = new KinhNghiem();
-            NhanVien_KinhNghiem nvkn = new NhanVien_KinhNghiem();
-            nvkn.IDNhanVien = nv.ID;
-            nvkn.IDKinhNghiem = kn.ID;
-            nv.HoTen = txtTenNV.Text;
-            nv.IDLoaiNhanVien = int.Parse(cbLoaiNV.SelectedValue.ToString());
-            nv.IDChucVu = int.Parse(cbChucVu.SelectedValue.ToString());
-            nv.GioiTinh = txtGT.Text;
-            nv.NgaySinh = dbNgaySinh.Value;
-            nv.NgayVaoLam = dPThoiGianBatDau.Value;
-            nv.MatKhau = txtMK.Text;
-            nv.TenDangNhap = txtTenDN.Text;
-            nv.DiaChi = txtDiaChi.Text;
-            nv.Email = txtMail.Text;
-            nv.SDT = txtSDT.Text;
-            nv.CMND = txtCMND.Text;
-            kn.BangCap = txtbangCap.Text;
-            kn.CongViec = txtCViec.Text;
-            kn.DiaDiem = txtDiaDiem.Text;
-            kn.ThoiGian = dbThoiGianLam.Value;
-            bNV.ThemNV(nv, kn, nvkn);
-           
-            HienThiDSCTNV();
+            if (txtTenNV.TextLength == 0)
+            {
+                erTenNV.SetError(txtTenNV, "Vui lòng nhập thông tin");
+            }
+            else
+                erTenNV.Clear();
             
         }
-       
-        public String ktrNULL()
+
+        private void txtGT_TextChanged(object sender, EventArgs e)
         {
-            string cout = " ";
-            for (int i = 0; i < gvCTNV.Rows.Count; i++)
+            if (txtGT.TextLength == 0)
             {
-                for (int j = 0; j < gvCTNV.Columns.Count; i++)
-                {
-                    cout = gvCTNV.Rows[i].Cells[j].Value.ToString();
-                    if (cout == null)
-                        cout = "Không có thông tin";
-                }
+                erGT.SetError(txtGT, "Vui lòng nhập thông tin");
             }
-            return cout;
+            else
+                erGT.Clear();
         }
-        private void gvCTNV_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void txtDiaChi_TextChanged(object sender, EventArgs e)
         {
-            txtMaNV.Text = gvCTNV.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtTenNV.Text = gvCTNV.Rows[e.RowIndex].Cells[1].Value.ToString();
-            cbChucVu.Text = gvCTNV.Rows[e.RowIndex].Cells[2].Value.ToString();
-            cbLoaiNV.Text = gvCTNV.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtSDT.Text = gvCTNV.Rows[e.RowIndex].Cells[4].Value.ToString();
-            dPThoiGianBatDau.Value = DateTime.Parse(gvCTNV.Rows[e.RowIndex].Cells[5].Value.ToString());
-            dbNgaySinh.Value = DateTime.Parse(gvCTNV.Rows[e.RowIndex].Cells[6].Value.ToString());
-            txtGT.Text = gvCTNV.Rows[e.RowIndex].Cells[7].Value.ToString();
-            txtCViec.Text = gvCTNV.Rows[e.RowIndex].Cells[8].Value.ToString();
-            txtDiaChi.Text = gvCTNV.Rows[e.RowIndex].Cells[9].Value.ToString();
-            txtbangCap.Text = gvCTNV.Rows[e.RowIndex].Cells[10].Value.ToString();
-            dbThoiGianLam.Value = DateTime.Parse(gvCTNV.Rows[e.RowIndex].Cells[11].Value.ToString());
-            txtGhiChu.Text = gvCTNV.Rows[e.RowIndex].Cells[12].Value.ToString();
+            if (txtDiaChi.TextLength == 0)
+            {
+                erDiaChi.SetError(txtDiaChi, "Vui lòng nhập thông tin");
+            }
+            else
+                erDiaChi.Clear();
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSDT.TextLength == 0)
+            {
+                erSDT.SetError(txtSDT, "Vui lòng nhập thông tin");
+            }
+            else
+                erSDT.Clear();
+        }
+
+        private void txtMail_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMail.TextLength == 0)
+            {
+                erEmail.SetError(txtMail, "Vui lòng nhập thông tin");
+            }
+            else
+                erEmail.Clear();
+        }
+
+        private void txtCMND_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCMND.TextLength == 0)
+            {
+                erCMND.SetError(txtCMND, "Vui lòng nhập thông tin");
+            }
+            else
+                erCMND.Clear();
+        }
+
+        private void txtCViec_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCViec.TextLength == 0)
+            {
+                erCongViec.SetError(txtCViec, "Vui lòng nhập thông tin");
+            }
+            else
+                erCongViec.Clear();
+        }
+
+        private void txtDiaDiem_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDiaDiem.TextLength == 0)
+            {
+                erDiaDiem.SetError(txtDiaDiem, "Vui lòng nhập thông tin");
+            }
+            else
+                erDiaDiem.Clear();
+        }
+
+        private void txtbangCap_TextChanged(object sender, EventArgs e)
+        {
+            if (txtbangCap.TextLength == 0)
+            {
+                erBangCap.SetError(txtbangCap, "Vui lòng nhập thông tin");
+            }
+            else
+                erBangCap.Clear();
+        }
+
+        private void txtGhiChu_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGhiChu.TextLength == 0)
+            {
+                erGhiChu.SetError(txtGhiChu, "Vui lòng nhập thông tin");
+            }
+            else
+                erGhiChu.Clear();
+        }
+        //Xóa trống các txt
+        public void XoaTrongTXT()
+        {
+            txtGhiChu.Clear();
+            txtDiaDiem.Clear();
+            txtGT.Clear();
+            txtMail.Clear();
+            txtMaNV.Clear();
+            txtMK.Clear();
+            txtSDT.Clear();
+            txtTenDN.Clear();
+            txtTenNV.Clear();
+            txtDiaDiem.Clear();
+            txtDiaChi.Clear();
+            txtCViec.Clear();
+            txtCMND.Clear();
+            txtbangCap.Clear();
+        }
+
+        // Xử lý thêm nhân viên
+        private void btThemNV_Click(object sender, EventArgs e)
+        {
+            if(txtGhiChu.TextLength == 0)
+                erGhiChu.SetError(txtGhiChu, "Vui lòng nhập thông tin");
+            if(txtbangCap.TextLength == 0)
+                erBangCap.SetError(txtbangCap, "Vui lòng nhập thông tin");
+            if (txtDiaDiem.TextLength == 0)
+                erDiaDiem.SetError(txtDiaDiem, "Vui lòng nhập thông tin");
+            if(txtCViec.TextLength == 0)
+                erCongViec.SetError(txtCViec, "Vui lòng nhập thông tin");
+            if(txtCMND.TextLength == 0)
+                erCMND.SetError(txtCMND, "Vui lòng nhập thông tin");
+           if(txtMail.TextLength == 0)
+                erEmail.SetError(txtMail, "Vui lòng nhập thông tin");
+           if(txtMail.TextLength == 0)
+                erEmail.SetError(txtMail, "Vui lòng nhập thông tin");
+           if(txtSDT.TextLength == 0)
+                erSDT.SetError(txtSDT, "Vui lòng nhập thông tin");
+           if(txtDiaChi.TextLength == 0)
+                erDiaChi.SetError(txtDiaChi, "Vui lòng nhập thông tin");
+           if(txtGT.TextLength == 0)
+                erGT.SetError(txtGT, "Vui lòng nhập thông tin");
+           if(txtTenNV.TextLength == 0)
+                erTenNV.SetError(txtTenNV, "Vui lòng nhập thông tin");
+            if (txtGhiChu.TextLength != 0 && txtbangCap.TextLength != 0 && txtDiaDiem.TextLength != 0 && txtCViec.TextLength != 0
+                        && txtCMND.TextLength != 0 && txtMail.TextLength != 0 && txtMail.TextLength != 0
+                      && txtSDT.TextLength != 0 && txtDiaChi.TextLength != 0 && txtGT.TextLength != 0 && txtTenNV.TextLength != 0)
+            {
+                NhanVien nv = new NhanVien();
+                KinhNghiem kn = new KinhNghiem();
+                NhanVien_KinhNghiem nvkn = new NhanVien_KinhNghiem();
+                nvkn.IDNhanVien = nv.ID;
+                nvkn.IDKinhNghiem = kn.ID;
+                nv.HoTen = txtTenNV.Text;
+                nv.IDLoaiNhanVien = int.Parse(cbLoaiNV.SelectedValue.ToString());
+                nv.IDChucVu = int.Parse(cbChucVu.SelectedValue.ToString());
+                nv.GioiTinh = txtGT.Text;
+                nv.NgaySinh = dbNgaySinh.Value;
+                nv.NgayVaoLam = dPThoiGianBatDau.Value;
+                nv.MatKhau = txtMK.Text;
+                nv.TenDangNhap = txtTenDN.Text;
+                nv.DiaChi = txtDiaChi.Text;
+                nv.Email = txtMail.Text;
+                nv.SDT = txtSDT.Text;
+                nv.CMND = txtCMND.Text;
+                kn.BangCap = txtbangCap.Text;
+                kn.CongViec = txtCViec.Text;
+                kn.DiaDiem = txtDiaDiem.Text;
+                kn.ThoiGian = dbThoiGianLam.Value;
+                bNV.ThemNV(nv, kn, nvkn);
+
+                HienThiDSCTNV();
+                XoaTrongTXT();
+            }
+
+        }
+
+        private void gvCTNV_DoubleClick(object sender, EventArgs e)
+        {
+            txtMaNV.Text = gvCTNV.CurrentRow.Cells[0].Value.ToString();
+            txtTenNV.Text = gvCTNV.CurrentRow.Cells[1].Value.ToString();
+           
+            cbChucVu.Text = gvCTNV.CurrentRow.Cells[2].Value.ToString();
+            cbLoaiNV.Text = gvCTNV.CurrentRow.Cells[3].Value.ToString();
+            txtSDT.Text = gvCTNV.CurrentRow.Cells[4].Value.ToString();
+            txtGT.Text = gvCTNV.CurrentRow.Cells[7].Value.ToString();
 
         }
     }

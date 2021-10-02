@@ -60,9 +60,6 @@ namespace QLNS
             this.erTheLoai = new System.Windows.Forms.ErrorProvider(this.components);
             this.erGiaBan = new System.Windows.Forms.ErrorProvider(this.components);
             this.erSL = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btSuaSach = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.gvSach = new System.Windows.Forms.DataGridView();
             this.gBCTSach.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erTenSach)).BeginInit();
@@ -72,8 +69,6 @@ namespace QLNS
             ((System.ComponentModel.ISupportInitialize)(this.erTheLoai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erGiaBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erSL)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSach)).BeginInit();
             this.SuspendLayout();
             // 
             // lbSach
@@ -298,7 +293,7 @@ namespace QLNS
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(102, 70);
             this.btLuu.TabIndex = 9;
-            this.btLuu.Text = "Thêm";
+            this.btLuu.Text = "Lưu";
             this.btLuu.UseVisualStyleBackColor = false;
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
@@ -311,7 +306,7 @@ namespace QLNS
             this.btThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThoat.ForeColor = System.Drawing.Color.White;
-            this.btThoat.Location = new System.Drawing.Point(314, 21);
+            this.btThoat.Location = new System.Drawing.Point(152, 21);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(119, 70);
             this.btThoat.TabIndex = 11;
@@ -323,10 +318,9 @@ namespace QLNS
             // 
             this.groupBox1.Controls.Add(this.btThoat);
             this.groupBox1.Controls.Add(this.btLuu);
-            this.groupBox1.Controls.Add(this.btSuaSach);
-            this.groupBox1.Location = new System.Drawing.Point(497, 428);
+            this.groupBox1.Location = new System.Drawing.Point(544, 431);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 100);
+            this.groupBox1.Size = new System.Drawing.Size(289, 100);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
@@ -365,50 +359,12 @@ namespace QLNS
             this.erSL.ContainerControl = this;
             this.erSL.RightToLeftChanged += new System.EventHandler(this.btLuu_Click);
             // 
-            // btSuaSach
-            // 
-            this.btSuaSach.AutoSize = true;
-            this.btSuaSach.BackColor = System.Drawing.Color.Firebrick;
-            this.btSuaSach.FlatAppearance.BorderSize = 2;
-            this.btSuaSach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btSuaSach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSuaSach.ForeColor = System.Drawing.Color.White;
-            this.btSuaSach.Location = new System.Drawing.Point(164, 21);
-            this.btSuaSach.Name = "btSuaSach";
-            this.btSuaSach.Size = new System.Drawing.Size(103, 70);
-            this.btSuaSach.TabIndex = 10;
-            this.btSuaSach.Text = "Sửa";
-            this.btSuaSach.UseVisualStyleBackColor = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.gvSach);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(50, 560);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(942, 280);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin chung";
-            // 
-            // gvSach
-            // 
-            this.gvSach.AllowUserToOrderColumns = true;
-            this.gvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSach.Location = new System.Drawing.Point(6, 21);
-            this.gvSach.Name = "gvSach";
-            this.gvSach.RowHeadersWidth = 51;
-            this.gvSach.RowTemplate.Height = 24;
-            this.gvSach.Size = new System.Drawing.Size(930, 253);
-            this.gvSach.TabIndex = 9;
-            // 
             // FSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(1030, 864);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(983, 572);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gBCTSach);
             this.Controls.Add(this.lbSach);
@@ -427,8 +383,6 @@ namespace QLNS
             ((System.ComponentModel.ISupportInitialize)(this.erTheLoai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erGiaBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erSL)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvSach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,8 +420,5 @@ namespace QLNS
         private System.Windows.Forms.ErrorProvider erTheLoai;
         private System.Windows.Forms.ErrorProvider erGiaBan;
         private System.Windows.Forms.ErrorProvider erSL;
-        private System.Windows.Forms.Button btSuaSach;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView gvSach;
     }
 }

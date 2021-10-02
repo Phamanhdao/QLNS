@@ -89,7 +89,6 @@ namespace QLNS
             cbNhaCC.Text = gvCTSP.Rows[e.RowIndex].Cells[5].Value.ToString();
             dPNgayNhapHang.Value = DateTime.Parse(gvCTSP.Rows[e.RowIndex].Cells[6].Value.ToString());
         }
-
         
     }
 }

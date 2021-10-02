@@ -25,6 +25,12 @@ namespace QLNS.BUS
             gv.DataSource = dNV.LayDSNV();
         }
         //Lấy dl lên combobox
+        public void HienThiDSLoaiNVQLLenCb(ComboBox cb)
+        {
+            cb.DataSource = dNV.layLoaiNVQLCBB();
+            cb.DisplayMember = "HoTen";
+            cb.ValueMember = "ID";
+        }
         public void HienThiDSTenNVLenCb(ComboBox cb)
         {
             cb.DataSource = dNV.layTenNVCBB();

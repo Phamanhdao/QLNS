@@ -204,9 +204,9 @@ namespace QLNS
             // 
             this.gBChucNang.Controls.Add(this.btThoat);
             this.gBChucNang.Controls.Add(this.btThem);
-            this.gBChucNang.Location = new System.Drawing.Point(603, 418);
+            this.gBChucNang.Location = new System.Drawing.Point(713, 420);
             this.gBChucNang.Name = "gBChucNang";
-            this.gBChucNang.Size = new System.Drawing.Size(298, 105);
+            this.gBChucNang.Size = new System.Drawing.Size(289, 105);
             this.gBChucNang.TabIndex = 9;
             this.gBChucNang.TabStop = false;
             // 
@@ -219,7 +219,7 @@ namespace QLNS
             this.btThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThoat.ForeColor = System.Drawing.Color.White;
-            this.btThoat.Location = new System.Drawing.Point(159, 21);
+            this.btThoat.Location = new System.Drawing.Point(155, 21);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(119, 70);
             this.btThoat.TabIndex = 3;

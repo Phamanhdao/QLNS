@@ -29,6 +29,7 @@ namespace QLNS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbTTNV = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCMND = new System.Windows.Forms.TextBox();
@@ -75,12 +76,34 @@ namespace QLNS
             this.lbDiaDiem = new System.Windows.Forms.Label();
             this.lbCongViec = new System.Windows.Forms.Label();
             this.txtCViec = new System.Windows.Forms.TextBox();
+            this.erTenNV = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erChucVu = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erGT = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erDiaChi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erSDT = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erCMND = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erCongViec = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erDiaDiem = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erBangCap = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erGhiChu = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.gBChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTNV)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gbTK.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erTenNV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erChucVu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erGT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erDiaChi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erSDT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erCMND)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erCongViec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erDiaDiem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erBangCap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erGhiChu)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTTNV
@@ -134,6 +157,7 @@ namespace QLNS
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(235, 27);
             this.txtCMND.TabIndex = 24;
+            this.txtCMND.TextChanged += new System.EventHandler(this.txtCMND_TextChanged);
             // 
             // lbCMND
             // 
@@ -160,6 +184,7 @@ namespace QLNS
             this.txtGT.Name = "txtGT";
             this.txtGT.Size = new System.Drawing.Size(200, 27);
             this.txtGT.TabIndex = 21;
+            this.txtGT.TextChanged += new System.EventHandler(this.txtGT_TextChanged);
             // 
             // lbGioiTinh
             // 
@@ -235,6 +260,7 @@ namespace QLNS
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(235, 27);
             this.txtMail.TabIndex = 10;
+            this.txtMail.TextChanged += new System.EventHandler(this.txtMail_TextChanged);
             // 
             // txtSDT
             // 
@@ -243,6 +269,7 @@ namespace QLNS
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(235, 27);
             this.txtSDT.TabIndex = 9;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtDiaChi
             // 
@@ -251,6 +278,7 @@ namespace QLNS
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(235, 27);
             this.txtDiaChi.TabIndex = 8;
+            this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
             // 
             // txtTenNV
             // 
@@ -259,6 +287,7 @@ namespace QLNS
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(200, 27);
             this.txtTenNV.TabIndex = 7;
+            this.txtTenNV.TextChanged += new System.EventHandler(this.txtTenNV_TextChanged);
             // 
             // txtMaNV
             // 
@@ -396,7 +425,7 @@ namespace QLNS
             this.gvCTNV.RowTemplate.Height = 24;
             this.gvCTNV.Size = new System.Drawing.Size(992, 209);
             this.gvCTNV.TabIndex = 9;
-            this.gvCTNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCTNV_CellClick);
+            this.gvCTNV.DoubleClick += new System.EventHandler(this.gvCTNV_DoubleClick);
             // 
             // groupBox2
             // 
@@ -495,6 +524,7 @@ namespace QLNS
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(200, 27);
             this.txtGhiChu.TabIndex = 31;
+            this.txtGhiChu.TextChanged += new System.EventHandler(this.txtGhiChu_TextChanged);
             // 
             // lbGhiChu
             // 
@@ -513,6 +543,7 @@ namespace QLNS
             this.txtbangCap.Name = "txtbangCap";
             this.txtbangCap.Size = new System.Drawing.Size(190, 27);
             this.txtbangCap.TabIndex = 28;
+            this.txtbangCap.TextChanged += new System.EventHandler(this.txtbangCap_TextChanged);
             // 
             // txtDiaDiem
             // 
@@ -521,6 +552,7 @@ namespace QLNS
             this.txtDiaDiem.Name = "txtDiaDiem";
             this.txtDiaDiem.Size = new System.Drawing.Size(190, 27);
             this.txtDiaDiem.TabIndex = 27;
+            this.txtDiaDiem.TextChanged += new System.EventHandler(this.txtDiaDiem_TextChanged);
             // 
             // lbTG
             // 
@@ -569,6 +601,62 @@ namespace QLNS
             this.txtCViec.Name = "txtCViec";
             this.txtCViec.Size = new System.Drawing.Size(190, 27);
             this.txtCViec.TabIndex = 22;
+            this.txtCViec.TextChanged += new System.EventHandler(this.txtCViec_TextChanged);
+            // 
+            // erTenNV
+            // 
+            this.erTenNV.ContainerControl = this;
+            this.erTenNV.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erChucVu
+            // 
+            this.erChucVu.ContainerControl = this;
+            this.erChucVu.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erGT
+            // 
+            this.erGT.ContainerControl = this;
+            this.erGT.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erDiaChi
+            // 
+            this.erDiaChi.ContainerControl = this;
+            this.erDiaChi.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erSDT
+            // 
+            this.erSDT.ContainerControl = this;
+            this.erSDT.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erEmail
+            // 
+            this.erEmail.ContainerControl = this;
+            this.erEmail.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erCMND
+            // 
+            this.erCMND.ContainerControl = this;
+            this.erCMND.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erCongViec
+            // 
+            this.erCongViec.ContainerControl = this;
+            this.erCongViec.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erDiaDiem
+            // 
+            this.erDiaDiem.ContainerControl = this;
+            this.erDiaDiem.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erBangCap
+            // 
+            this.erBangCap.ContainerControl = this;
+            this.erBangCap.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // erGhiChu
+            // 
+            this.erGhiChu.ContainerControl = this;
+            this.erGhiChu.RightToLeftChanged += new System.EventHandler(this.btThemNV_Click);
             // 
             // FCTNV
             // 
@@ -600,6 +688,17 @@ namespace QLNS
             this.gbTK.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erTenNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erChucVu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erGT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erDiaChi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erSDT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erCMND)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erCongViec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erDiaDiem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erBangCap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erGhiChu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -653,5 +752,16 @@ namespace QLNS
         private System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.Label lbCMND;
         private System.Windows.Forms.DateTimePicker dbThoiGianLam;
+        private System.Windows.Forms.ErrorProvider erTenNV;
+        private System.Windows.Forms.ErrorProvider erChucVu;
+        private System.Windows.Forms.ErrorProvider erGT;
+        private System.Windows.Forms.ErrorProvider erDiaChi;
+        private System.Windows.Forms.ErrorProvider erSDT;
+        private System.Windows.Forms.ErrorProvider erEmail;
+        private System.Windows.Forms.ErrorProvider erCMND;
+        private System.Windows.Forms.ErrorProvider erCongViec;
+        private System.Windows.Forms.ErrorProvider erDiaDiem;
+        private System.Windows.Forms.ErrorProvider erBangCap;
+        private System.Windows.Forms.ErrorProvider erGhiChu;
     }
 }

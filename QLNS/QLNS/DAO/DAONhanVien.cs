@@ -43,11 +43,9 @@ namespace QLNS.DAO
                 s.NhanVien.NgayVaoLam,
                 s.NhanVien.NgaySinh,
                 s.NhanVien.GioiTinh,
-                s.KinhNghiem.CongViec,
-                s.KinhNghiem.DiaDiem,
-                s.KinhNghiem.BangCap,
-                s.KinhNghiem.ThoiGian,
-                s.Ghichu,
+                //
+              
+               
 
             }).ToList();
             return dsnv;
@@ -65,6 +63,16 @@ namespace QLNS.DAO
         public dynamic layLoaiNVCBB()
         {
             var ds = dbnv.LoaiNhanViens.Select(s => new
+            {
+                s.ID,
+                s.TenLoaiNhanVien,
+            }).ToList();
+            return ds;
+        }
+        //
+        public dynamic layLoaiNVQLCBB()
+        {
+            var ds = dbnv.LoaiNhanViens.Where(s => s.ID == 1).Select(s => new
             {
                 s.ID,
                 s.TenLoaiNhanVien,
@@ -152,6 +160,27 @@ namespace QLNS.DAO
             dbnv.NhanVien_KinhNghiem.Add(nvkn);
             dbnv.SaveChanges();
         }
+        //sửa
+        //public bool KiemTraMaNV(NhanVien nv)
+        //{
+        //    NhanVien nvien = dbnv.NhanViens.Find(nv.ID);
+        //    if (nvien != null)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //        return false;
+        //}
+
+        //public void SuaNV(NhanVien nv)
+        //{
+        //    NhanVien nvien = dbnv.NhanViens.Find(nv.ID);
+        //    nv.SDT = nvien.SDT;
+        //    nv.DiaChi = nvien.DiaChi;
+
+        //    dbnv.SaveChanges();
+
+        //}
 
     }
 }

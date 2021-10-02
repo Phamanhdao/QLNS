@@ -15,7 +15,7 @@ namespace QLNS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FQLSP());
+            Application.Run(new FQLNV());
         }
     }
 }
