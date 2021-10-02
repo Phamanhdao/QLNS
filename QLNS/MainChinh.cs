@@ -16,5 +16,20 @@ namespace QLNS
         {
             InitializeComponent();
         }
+
+        private void btThuNgan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btKeToan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btQL_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

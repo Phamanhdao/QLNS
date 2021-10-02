@@ -32,11 +32,11 @@ namespace QLNS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainChinh));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btThuNgan = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btNVQL = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btQL = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btKeToan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -57,70 +57,73 @@ namespace QLNS
             // 
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btThuNgan);
             this.groupBox1.Location = new System.Drawing.Point(111, 141);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(265, 273);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // btThuNgan
+            // 
+            this.btThuNgan.BackColor = System.Drawing.Color.LightCoral;
+            this.btThuNgan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThuNgan.ForeColor = System.Drawing.Color.Snow;
+            this.btThuNgan.Location = new System.Drawing.Point(0, 231);
+            this.btThuNgan.Name = "btThuNgan";
+            this.btThuNgan.Size = new System.Drawing.Size(265, 42);
+            this.btThuNgan.TabIndex = 0;
+            this.btThuNgan.Text = "THU NGÂN";
+            this.btThuNgan.UseVisualStyleBackColor = false;
+            this.btThuNgan.Click += new System.EventHandler(this.btThuNgan_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.groupBox2.Controls.Add(this.btNVQL);
+            this.groupBox2.Controls.Add(this.btQL);
             this.groupBox2.Location = new System.Drawing.Point(748, 141);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(263, 273);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // btNVQL
+            // btQL
             // 
-            this.btNVQL.BackColor = System.Drawing.Color.LightCoral;
-            this.btNVQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNVQL.ForeColor = System.Drawing.Color.Snow;
-            this.btNVQL.Location = new System.Drawing.Point(0, 231);
-            this.btNVQL.Name = "btNVQL";
-            this.btNVQL.Size = new System.Drawing.Size(263, 42);
-            this.btNVQL.TabIndex = 0;
-            this.btNVQL.Text = "QUẢN LÝ";
-            this.btNVQL.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightCoral;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(0, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(265, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "THU NGÂN";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btQL.BackColor = System.Drawing.Color.LightCoral;
+            this.btQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btQL.ForeColor = System.Drawing.Color.Snow;
+            this.btQL.Location = new System.Drawing.Point(0, 231);
+            this.btQL.Name = "btQL";
+            this.btQL.Size = new System.Drawing.Size(263, 42);
+            this.btQL.TabIndex = 0;
+            this.btQL.Text = "QUẢN LÝ";
+            this.btQL.UseVisualStyleBackColor = false;
+            this.btQL.Click += new System.EventHandler(this.btQL_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
             this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.btKeToan);
             this.groupBox3.Location = new System.Drawing.Point(438, 141);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(263, 273);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             // 
-            // button2
+            // btKeToan
             // 
-            this.button2.BackColor = System.Drawing.Color.LightCoral;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Snow;
-            this.button2.Location = new System.Drawing.Point(0, 231);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(263, 42);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "KẾ TOÁN";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btKeToan.BackColor = System.Drawing.Color.LightCoral;
+            this.btKeToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btKeToan.ForeColor = System.Drawing.Color.Snow;
+            this.btKeToan.Location = new System.Drawing.Point(0, 231);
+            this.btKeToan.Name = "btKeToan";
+            this.btKeToan.Size = new System.Drawing.Size(263, 42);
+            this.btKeToan.TabIndex = 0;
+            this.btKeToan.Text = "KẾ TOÁN";
+            this.btKeToan.UseVisualStyleBackColor = false;
+            this.btKeToan.Click += new System.EventHandler(this.btKeToan_Click);
             // 
             // MainChinh
             // 
@@ -149,10 +152,10 @@ namespace QLNS
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btThuNgan;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btNVQL;
+        private System.Windows.Forms.Button btQL;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btKeToan;
     }
 }
