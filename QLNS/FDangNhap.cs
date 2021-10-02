@@ -22,7 +22,7 @@ namespace QLNS
 
         private void FDangNhap_Load(object sender, EventArgs e)
         {
-            busDN.LayDSLNV(cbLoaiTK);
+            busDN.LayDSCV(cbChucVu);
         }
 
         private void btDangNhap_Click(object sender, EventArgs e)
@@ -32,18 +32,32 @@ namespace QLNS
             else
             {
                 NhanVien nv = new NhanVien();
-                nv.IDLoaiNhanVien = Int32.Parse(cbLoaiTK.SelectedValue.ToString());
+                nv.IDChucVu = Int32.Parse(cbChucVu.SelectedValue.ToString());
                 nv.TenDangNhap = txtTenDangNhap.Text;
                 nv.MatKhau = txtMatKhau.Text;
                 if (busDN.DangNhap(nv))
                 {
                     this.Hide();
-                    MainQuanLy main = new MainQuanLy();
-                    main.ShowDialog();
+                    if (nv.IDChucVu == 1)
+                    {
+                        MainQuanLy main = new MainQuanLy();
+                        main.ShowDialog();
+                    }
+                    if (nv.IDChucVu == 2)
+                    {
+                        MainKeToan main = new MainKeToan();
+                        main.ShowDialog();
+                    }
+                    if (nv.IDChucVu == 3)
+                    { 
+                        MainThuNgan main = new MainThuNgan();
+                        main.ShowDialog();
+                    }
+
                     this.Close();
                 }
                 else
-                    MessageBox.Show("Sai Loại Nhân Viên hoặc Tên Đăng Nhập hoặc Mật Khẩu!!!");
+                    MessageBox.Show("Sai Chức Vụ hoặc Tên Đăng Nhập hoặc Mật Khẩu!!!");
             }
         }
 
@@ -67,6 +81,11 @@ namespace QLNS
             {
                 errorProvider2.SetError(txtMatKhau, null);
             }
+        }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

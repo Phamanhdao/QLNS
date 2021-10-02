@@ -36,8 +36,6 @@ namespace QLNS
             this.tenNgLHLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtChucVu = new System.Windows.Forms.TextBox();
-            this.txtNgLH = new System.Windows.Forms.TextBox();
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.sdtLabel = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -46,6 +44,8 @@ namespace QLNS
             this.lb = new System.Windows.Forms.Label();
             this.txtMaNCC = new System.Windows.Forms.TextBox();
             this.txtTenNCC = new System.Windows.Forms.TextBox();
+            this.txtChucVu = new System.Windows.Forms.TextBox();
+            this.txtNgLH = new System.Windows.Forms.TextBox();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -58,7 +58,7 @@ namespace QLNS
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btThoat = new System.Windows.Forms.Button();
+            this.btTroVe = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
@@ -112,11 +112,11 @@ namespace QLNS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(287, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(499, 49);
+            this.label1.Size = new System.Drawing.Size(445, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ NHÀ CUNG CẤP";
             // 
@@ -141,22 +141,6 @@ namespace QLNS
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà cung cấp:";
-            // 
-            // txtChucVu
-            // 
-            this.txtChucVu.Location = new System.Drawing.Point(133, 70);
-            this.txtChucVu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(290, 22);
-            this.txtChucVu.TabIndex = 15;
-            // 
-            // txtNgLH
-            // 
-            this.txtNgLH.Location = new System.Drawing.Point(133, 33);
-            this.txtNgLH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNgLH.Name = "txtNgLH";
-            this.txtNgLH.Size = new System.Drawing.Size(290, 22);
-            this.txtNgLH.TabIndex = 15;
             // 
             // txtSdt
             // 
@@ -224,6 +208,22 @@ namespace QLNS
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(265, 22);
             this.txtTenNCC.TabIndex = 3;
+            // 
+            // txtChucVu
+            // 
+            this.txtChucVu.Location = new System.Drawing.Point(133, 70);
+            this.txtChucVu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Size = new System.Drawing.Size(290, 22);
+            this.txtChucVu.TabIndex = 15;
+            // 
+            // txtNgLH
+            // 
+            this.txtNgLH.Location = new System.Drawing.Point(133, 33);
+            this.txtNgLH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNgLH.Name = "txtNgLH";
+            this.txtNgLH.Size = new System.Drawing.Size(290, 22);
+            this.txtNgLH.TabIndex = 15;
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -307,7 +307,7 @@ namespace QLNS
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btThoat);
+            this.groupBox2.Controls.Add(this.btTroVe);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btThem);
@@ -319,19 +319,18 @@ namespace QLNS
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             // 
-            // btThoat
+            // btTroVe
             // 
-            this.btThoat.BackColor = System.Drawing.Color.Firebrick;
-            this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.ForeColor = System.Drawing.Color.Snow;
-            this.btThoat.Location = new System.Drawing.Point(323, 23);
-            this.btThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(99, 71);
-            this.btThoat.TabIndex = 3;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.UseVisualStyleBackColor = false;
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            this.btTroVe.BackColor = System.Drawing.Color.Firebrick;
+            this.btTroVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTroVe.ForeColor = System.Drawing.Color.Snow;
+            this.btTroVe.Location = new System.Drawing.Point(323, 23);
+            this.btTroVe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btTroVe.Name = "btTroVe";
+            this.btTroVe.Size = new System.Drawing.Size(99, 71);
+            this.btTroVe.TabIndex = 3;
+            this.btTroVe.Text = "Trở về";
+            this.btTroVe.UseVisualStyleBackColor = false;
             // 
             // btSua
             // 
@@ -476,7 +475,7 @@ namespace QLNS
 
         private System.Windows.Forms.TextBox txtTenNCC;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btThoat;
+        private System.Windows.Forms.Button btTroVe;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThem;

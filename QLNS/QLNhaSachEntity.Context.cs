@@ -37,8 +37,8 @@ namespace QLNS
         public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public virtual DbSet<NhaCungCap_SanPham> NhaCungCap_SanPham { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
+        public virtual DbSet<NhanVien_KinhNghiem> NhanVien_KinhNghiem { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     
         public virtual ObjectResult<Nullable<int>> sp_KiemTraCTDH(Nullable<int> maDH, Nullable<int> maSP)
         {
@@ -53,11 +53,11 @@ namespace QLNS
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_KiemTraCTDH", maDHParameter, maSPParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> sp_KiemTraDangNhap(Nullable<int> idLNV, string tenDN, string matKhau)
+        public virtual ObjectResult<Nullable<int>> sp_KiemTraDangNhap(Nullable<int> idChucVu, string tenDN, string matKhau)
         {
-            var idLNVParameter = idLNV.HasValue ?
-                new ObjectParameter("idLNV", idLNV) :
-                new ObjectParameter("idLNV", typeof(int));
+            var idChucVuParameter = idChucVu.HasValue ?
+                new ObjectParameter("idChucVu", idChucVu) :
+                new ObjectParameter("idChucVu", typeof(int));
     
             var tenDNParameter = tenDN != null ?
                 new ObjectParameter("tenDN", tenDN) :
@@ -67,7 +67,7 @@ namespace QLNS
                 new ObjectParameter("matKhau", matKhau) :
                 new ObjectParameter("matKhau", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_KiemTraDangNhap", idLNVParameter, tenDNParameter, matKhauParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_KiemTraDangNhap", idChucVuParameter, tenDNParameter, matKhauParameter);
         }
     }
 }

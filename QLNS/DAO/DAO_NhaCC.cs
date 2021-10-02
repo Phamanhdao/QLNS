@@ -10,10 +10,10 @@ namespace QLNS.DAO
    
     class DAO_NhaCC
     {
-        QLNhaSachEntities db;
+        QLNhaSachEntities1 db;
         public DAO_NhaCC()
         {
-            db = new QLNhaSachEntities();
+            db = new QLNhaSachEntities1();
         }
 
         public dynamic LayDSTenNCC()

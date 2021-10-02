@@ -8,11 +8,11 @@ namespace QLNS.DAO
 {
     class DAO_DonHang
     {
-        QLNhaSachEntities db;
+        QLNhaSachEntities1 db;
 
         public DAO_DonHang()
         {
-            db = new QLNhaSachEntities();
+            db = new QLNhaSachEntities1();
         }
 
         public dynamic LayDSSDH()

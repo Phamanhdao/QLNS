@@ -147,6 +147,9 @@ namespace QLNS
 
         private void bt_exit_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            FDangNhap dn = new FDangNhap();
+            dn.ShowDialog();
             Close();
         }
     }
