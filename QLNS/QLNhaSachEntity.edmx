@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QLNhaSachModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QLNhaSachModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChiTietDonHang">
           <Key>
             <PropertyRef Name="IDDonHang" />
@@ -134,16 +134,6 @@
           <Property Name="TinhTrang" Type="bit" Nullable="false" />
           <Property Name="IDDanhMucSanPham" Type="int" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <Association Name="FK__ChiTietDo__IDDon__37A5467C">
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
           <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="*" />
@@ -240,7 +230,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NhanVien___IDKin__534D60F1">
+        <Association Name="FK__NhanVien___IDKin__145C0A3F">
           <End Role="KinhNghiem" Type="Self.KinhNghiem" Multiplicity="1" />
           <End Role="NhanVien_KinhNghiem" Type="Self.NhanVien_KinhNghiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -252,7 +242,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NhanVien___IDNha__52593CB8">
+        <Association Name="FK__NhanVien___IDNha__1367E606">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
           <End Role="NhanVien_KinhNghiem" Type="Self.NhanVien_KinhNghiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -305,7 +295,7 @@
           <Parameter Name="MaSP" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_KiemTraDangNhap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idLNV" Type="int" Mode="In" />
+          <Parameter Name="idChucVu" Type="int" Mode="In" />
           <Parameter Name="tenDN" Type="varchar" Mode="In" />
           <Parameter Name="matKhau" Type="varchar" Mode="In" />
         </Function>
@@ -322,7 +312,6 @@
           <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhanVien_KinhNghiem" EntityType="Self.NhanVien_KinhNghiem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__ChiTietDo__IDDon__37A5467C" Association="Self.FK__ChiTietDo__IDDon__37A5467C">
             <End Role="DonHang" EntitySet="DonHang" />
             <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
@@ -355,11 +344,11 @@
             <End Role="SanPham" EntitySet="SanPham" />
             <End Role="NhaCungCap_SanPham" EntitySet="NhaCungCap_SanPham" />
           </AssociationSet>
-          <AssociationSet Name="FK__NhanVien___IDKin__534D60F1" Association="Self.FK__NhanVien___IDKin__534D60F1">
+          <AssociationSet Name="FK__NhanVien___IDKin__145C0A3F" Association="Self.FK__NhanVien___IDKin__145C0A3F">
             <End Role="KinhNghiem" EntitySet="KinhNghiem" />
             <End Role="NhanVien_KinhNghiem" EntitySet="NhanVien_KinhNghiem" />
           </AssociationSet>
-          <AssociationSet Name="FK__NhanVien___IDNha__52593CB8" Association="Self.FK__NhanVien___IDNha__52593CB8">
+          <AssociationSet Name="FK__NhanVien___IDNha__1367E606" Association="Self.FK__NhanVien___IDNha__1367E606">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="NhanVien_KinhNghiem" EntitySet="NhanVien_KinhNghiem" />
           </AssociationSet>
@@ -376,7 +365,8 @@
             <End Role="SanPham" EntitySet="SanPham" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLNhaSachModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -432,7 +422,7 @@
           <Property Name="BangCap" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="ThoiGian" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="NhanViens" Relationship="Self.NhanVien_KinhNghiem" FromRole="KinhNghiem" ToRole="NhanVien" />
+          <NavigationProperty Name="NhanVien_KinhNghiem" Relationship="Self.FK__NhanVien___IDKin__145C0A3F" FromRole="KinhNghiem" ToRole="NhanVien_KinhNghiem" />
         </EntityType>
         <EntityType Name="LaDanhMucSach">
           <Key>
@@ -505,7 +495,18 @@
           <NavigationProperty Name="ChucVu" Relationship="Self.FK__NhanVien__IDChuc__09DE7BCC" FromRole="NhanVien" ToRole="ChucVu" />
           <NavigationProperty Name="DonHangs" Relationship="Self.FK__DonHang__IDNhanV__31EC6D26" FromRole="NhanVien" ToRole="DonHang" />
           <NavigationProperty Name="LoaiNhanVien" Relationship="Self.FK__NhanVien__IDLoai__0AD2A005" FromRole="NhanVien" ToRole="LoaiNhanVien" />
-          <NavigationProperty Name="KinhNghiems" Relationship="Self.NhanVien_KinhNghiem" FromRole="NhanVien" ToRole="KinhNghiem" />
+          <NavigationProperty Name="NhanVien_KinhNghiem" Relationship="Self.FK__NhanVien___IDNha__1367E606" FromRole="NhanVien" ToRole="NhanVien_KinhNghiem" />
+        </EntityType>
+        <EntityType Name="NhanVien_KinhNghiem">
+          <Key>
+            <PropertyRef Name="IDNhanVien" />
+            <PropertyRef Name="IDKinhNghiem" />
+          </Key>
+          <Property Name="IDNhanVien" Type="Int32" Nullable="false" />
+          <Property Name="IDKinhNghiem" Type="Int32" Nullable="false" />
+          <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KinhNghiem" Relationship="Self.FK__NhanVien___IDKin__145C0A3F" FromRole="NhanVien_KinhNghiem" ToRole="KinhNghiem" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK__NhanVien___IDNha__1367E606" FromRole="NhanVien_KinhNghiem" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="SanPham">
           <Key>
@@ -523,16 +524,6 @@
           <NavigationProperty Name="DanhMucSanPham" Relationship="Self.FK__SanPham__IDDanhM__21B6055D" FromRole="SanPham" ToRole="DanhMucSanPham" />
           <NavigationProperty Name="LaDanhMucSaches" Relationship="Self.FK__LaDanhMuc__IDSac__276EDEB3" FromRole="SanPham" ToRole="LaDanhMucSach" />
           <NavigationProperty Name="NhaCungCap_SanPham" Relationship="Self.FK__NhaCungCa__IDSan__2D27B809" FromRole="SanPham" ToRole="NhaCungCap_SanPham" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK__ChiTietDo__IDDon__37A5467C">
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
@@ -618,6 +609,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__NhanVien___IDKin__145C0A3F">
+          <End Role="KinhNghiem" Type="Self.KinhNghiem" Multiplicity="1" />
+          <End Role="NhanVien_KinhNghiem" Type="Self.NhanVien_KinhNghiem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KinhNghiem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NhanVien_KinhNghiem">
+              <PropertyRef Name="IDKinhNghiem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__LaDanhMuc__IDSac__276EDEB3">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
           <End Role="LaDanhMucSach" Type="Self.LaDanhMucSach" Multiplicity="*" />
@@ -666,11 +669,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="NhanVien_KinhNghiem">
-          <End Role="KinhNghiem" Type="Self.KinhNghiem" Multiplicity="*" />
-          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+        <Association Name="FK__NhanVien___IDNha__1367E606">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+          <End Role="NhanVien_KinhNghiem" Type="Self.NhanVien_KinhNghiem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NhanVien_KinhNghiem">
+              <PropertyRef Name="IDNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLNhaSachEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLNhaSachEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
           <EntitySet Name="ChucVus" EntityType="Self.ChucVu" />
           <EntitySet Name="DanhMucSanPhams" EntityType="Self.DanhMucSanPham" />
@@ -681,8 +692,8 @@
           <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
           <EntitySet Name="NhaCungCap_SanPham" EntityType="Self.NhaCungCap_SanPham" />
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+          <EntitySet Name="NhanVien_KinhNghiem" EntityType="Self.NhanVien_KinhNghiem" />
           <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <AssociationSet Name="FK__ChiTietDo__IDDon__37A5467C" Association="Self.FK__ChiTietDo__IDDon__37A5467C">
             <End Role="DonHang" EntitySet="DonHangs" />
             <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
@@ -711,6 +722,10 @@
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="DonHang" EntitySet="DonHangs" />
           </AssociationSet>
+          <AssociationSet Name="FK__NhanVien___IDKin__145C0A3F" Association="Self.FK__NhanVien___IDKin__145C0A3F">
+            <End Role="KinhNghiem" EntitySet="KinhNghiems" />
+            <End Role="NhanVien_KinhNghiem" EntitySet="NhanVien_KinhNghiem" />
+          </AssociationSet>
           <AssociationSet Name="FK__LaDanhMuc__IDSac__276EDEB3" Association="Self.FK__LaDanhMuc__IDSac__276EDEB3">
             <End Role="SanPham" EntitySet="SanPhams" />
             <End Role="LaDanhMucSach" EntitySet="LaDanhMucSaches" />
@@ -727,16 +742,16 @@
             <End Role="SanPham" EntitySet="SanPhams" />
             <End Role="NhaCungCap_SanPham" EntitySet="NhaCungCap_SanPham" />
           </AssociationSet>
-          <AssociationSet Name="NhanVien_KinhNghiem" Association="Self.NhanVien_KinhNghiem">
-            <End Role="KinhNghiem" EntitySet="KinhNghiems" />
+          <AssociationSet Name="FK__NhanVien___IDNha__1367E606" Association="Self.FK__NhanVien___IDNha__1367E606">
             <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="NhanVien_KinhNghiem" EntitySet="NhanVien_KinhNghiem" />
           </AssociationSet>
           <FunctionImport Name="sp_KiemTraCTDH" ReturnType="Collection(Int32)">
             <Parameter Name="MaDH" Mode="In" Type="Int32" />
             <Parameter Name="MaSP" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_KiemTraDangNhap" ReturnType="Collection(Int32)">
-            <Parameter Name="idLNV" Mode="In" Type="Int32" />
+            <Parameter Name="idChucVu" Mode="In" Type="Int32" />
             <Parameter Name="tenDN" Mode="In" Type="String" />
             <Parameter Name="matKhau" Mode="In" Type="String" />
           </FunctionImport>
@@ -746,7 +761,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLNhaSachModelStoreContainer" CdmEntityContainer="QLNhaSachEntities">
+        <EntityContainerMapping StorageEntityContainer="QLNhaSachModelStoreContainer" CdmEntityContainer="QLNhaSachEntities1">
           <EntitySetMapping Name="ChiTietDonHangs">
             <EntityTypeMapping TypeName="QLNhaSachModel.ChiTietDonHang">
               <MappingFragment StoreEntitySet="ChiTietDonHang">
@@ -861,6 +876,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="NhanVien_KinhNghiem">
+            <EntityTypeMapping TypeName="QLNhaSachModel.NhanVien_KinhNghiem">
+              <MappingFragment StoreEntitySet="NhanVien_KinhNghiem">
+                <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
+                <ScalarProperty Name="IDKinhNghiem" ColumnName="IDKinhNghiem" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="SanPhams">
             <EntityTypeMapping TypeName="QLNhaSachModel.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
@@ -875,25 +899,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="QLNhaSachModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="NhanVien_KinhNghiem" TypeName="QLNhaSachModel.NhanVien_KinhNghiem" StoreEntitySet="NhanVien_KinhNghiem">
-            <EndProperty Name="KinhNghiem">
-              <ScalarProperty Name="ID" ColumnName="IDKinhNghiem" />
-            </EndProperty>
-            <EndProperty Name="NhanVien">
-              <ScalarProperty Name="ID" ColumnName="IDNhanVien" />
-            </EndProperty>
-          </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="sp_KiemTraCTDH" FunctionName="QLNhaSachModel.Store.sp_KiemTraCTDH" />
           <FunctionImportMapping FunctionImportName="sp_KiemTraDangNhap" FunctionName="QLNhaSachModel.Store.sp_KiemTraDangNhap" />
         </EntityContainerMapping>

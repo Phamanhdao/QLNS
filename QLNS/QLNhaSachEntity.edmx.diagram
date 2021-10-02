@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="268d9994f6194c77b24f1a5b6bb1df93" Name="Diagram1">
+      <Diagram DiagramId="2665b38f91914d42becc83c01433dfb2" Name="Diagram1">
         <EntityTypeShape EntityType="QLNhaSachModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLNhaSachModel.ChucVu" Width="1.5" PointX="1.5" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.ChucVu" Width="1.5" PointX="1.5" PointY="18" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNhaSachModel.DanhMucSanPham" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLNhaSachModel.DonHang" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLNhaSachModel.KinhNghiem" Width="1.5" PointX="1.5" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.DonHang" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.KinhNghiem" Width="1.5" PointX="1.75" PointY="24.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNhaSachModel.LaDanhMucSach" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLNhaSachModel.LoaiNhanVien" Width="1.5" PointX="1.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.LoaiNhanVien" Width="1.5" PointX="1.5" PointY="20.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNhaSachModel.NhaCungCap" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNhaSachModel.NhaCungCap_SanPham" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLNhaSachModel.NhanVien" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.NhanVien" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaSachModel.NhanVien_KinhNghiem" Width="1.5" PointX="4" PointY="16" IsExpanded="true" />
         <EntityTypeShape EntityType="QLNhaSachModel.SanPham" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLNhaSachModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="QLNhaSachModel.FK__ChiTietDo__IDDon__37A5467C" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhaSachModel.FK__ChiTietDo__IDSan__38996AB5" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhaSachModel.FK__ChucVu__IDLoaiNh__0519C6AF" ManuallyRouted="false" />
@@ -24,11 +24,12 @@
         <AssociationConnector Association="QLNhaSachModel.FK__LaDanhMuc__IDDan__267ABA7A" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhaSachModel.FK__SanPham__IDDanhM__21B6055D" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhaSachModel.FK__DonHang__IDNhanV__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__NhanVien___IDKin__145C0A3F" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhaSachModel.FK__LaDanhMuc__IDSac__276EDEB3" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhaSachModel.FK__NhanVien__IDLoai__0AD2A005" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhaSachModel.FK__NhaCungCa__IDNha__2C3393D0" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhaSachModel.FK__NhaCungCa__IDSan__2D27B809" ManuallyRouted="false" />
-        <AssociationConnector Association="QLNhaSachModel.NhanVien_KinhNghiem" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaSachModel.FK__NhanVien___IDNha__1367E606" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

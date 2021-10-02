@@ -37,7 +37,12 @@ namespace QLNS
         {
             DialogResult thoat = MessageBox.Show("Bạn có muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             if (thoat == DialogResult.Yes)
+             {
+                this.Hide();
+                FDangNhap dn = new FDangNhap();
+                dn.ShowDialog();
                 Close();
+            }   
         }
     }
 }

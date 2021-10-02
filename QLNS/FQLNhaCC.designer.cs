@@ -113,11 +113,11 @@ namespace QLNS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(287, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(499, 49);
+            this.label1.Size = new System.Drawing.Size(445, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ NHÀ CUNG CẤP";
             // 
@@ -331,7 +331,7 @@ namespace QLNS
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(99, 71);
             this.btThoat.TabIndex = 3;
-            this.btThoat.Text = "Thoát";
+            this.btThoat.Text = "Trở về";
             this.btThoat.UseVisualStyleBackColor = false;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 

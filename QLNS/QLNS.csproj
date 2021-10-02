@@ -130,12 +130,6 @@
     <Compile Include="LoaiNhanVien.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="MainChinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainChinh.Designer.cs">
-      <DependentUpon>MainChinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainKeToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +155,9 @@
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="NhanVien.cs">
+      <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien_KinhNghiem.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -189,9 +186,6 @@
     <Compile Include="SanPham.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FChiTietDonHang.resx">
       <DependentUpon>FChiTietDonHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,9 +203,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FReportSanPham.resx">
       <DependentUpon>FReportSanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainChinh.resx">
-      <DependentUpon>MainChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainKeToan.resx">
       <DependentUpon>MainKeToan.cs</DependentUpon>
@@ -260,8 +251,8 @@
   <ItemGroup>
     <Content Include="QLNhaSachEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QLNhaSachEntity.Context.cs</LastGenOutput>
       <DependentUpon>QLNhaSachEntity.edmx</DependentUpon>
+      <LastGenOutput>QLNhaSachEntity.Context.cs</LastGenOutput>
     </Content>
     <Content Include="QLNhaSachEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
