@@ -38,9 +38,7 @@ namespace QLNS
             gvCTNV.Columns[6].HeaderText = "Ngày sinh";
             gvCTNV.Columns[7].HeaderText = "Giới tính";
             //
-            gvCTNV.Columns[8].HeaderText = "Địa chỉ";
-            gvCTNV.Columns[9].HeaderText = "CMND";
-            gvCTNV.Columns[10].HeaderText = "Email";
+           
 
             gvCTNV.Columns[0].Width = (int)(gvCTNV.Width * 0.2);
             gvCTNV.Columns[1].Width = (int)(gvCTNV.Width * 0.25);

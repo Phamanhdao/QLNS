@@ -9,15 +9,16 @@ namespace QLNS.DAO
     
     class DAONhanVien
     {
-        QLNhaSachEntities1 dbnv;
+        QLNhaSachEntities1 db;
         public DAONhanVien()
         {
-            dbnv = new QLNhaSachEntities1();
+            db = new QLNhaSachEntities1();
+           
         }
         //Lấy danh sách nhân viên ra gvNV
         public dynamic LayDSNV()
         {
-            var dsnv = dbnv.NhanViens.Select(s => new
+            var dsnv = db.NhanViens.Select(s => new
             {
                 s.ID,
                 s.HoTen,
@@ -33,7 +34,7 @@ namespace QLNS.DAO
         //Lấy ds nhân viên đổ ra datagridview form CTNV
         public dynamic LayDSCTNV()
         {
-            var dsnv = dbnv.NhanVien_KinhNghiem.Select(s => new
+            var dsnv = db.NhanVien_KinhNghiem.Select(s => new
             {
                 s.NhanVien.ID,
                 s.NhanVien.HoTen,
@@ -53,7 +54,7 @@ namespace QLNS.DAO
         //Lấy tên, loại, chức vụ nhân viên đổ ra cbb
         public dynamic layTenNVCBB()
         {
-            var ds = dbnv.NhanViens.Select(s => new
+            var ds = db.NhanViens.Select(s => new
             {
                 s.ID,
                 s.HoTen,
@@ -62,7 +63,7 @@ namespace QLNS.DAO
         }
         public dynamic layLoaiNVCBB()
         {
-            var ds = dbnv.LoaiNhanViens.Select(s => new
+            var ds = db.LoaiNhanViens.Select(s => new
             {
                 s.ID,
                 s.TenLoaiNhanVien,
@@ -72,7 +73,7 @@ namespace QLNS.DAO
         //
         public dynamic layLoaiNVQLCBB()
         {
-            var ds = dbnv.LoaiNhanViens.Where(s => s.ID == 1).Select(s => new
+            var ds = db.LoaiNhanViens.Where(s => s.ID == 1).Select(s => new
             {
                 s.ID,
                 s.TenLoaiNhanVien,
@@ -81,7 +82,7 @@ namespace QLNS.DAO
         }
         public dynamic layChucVuNVCBB()
         {
-            var ds = dbnv.ChucVus.Select(s => new
+            var ds = db.ChucVus.Select(s => new
             {
                 s.ID,
                 s.TenChucVu,
@@ -93,7 +94,7 @@ namespace QLNS.DAO
         // Xử lý lấy dssp theo danh mục sản phẩm:
         public dynamic HienThiNVTheoTen(int maNV)
         {
-            var ds = dbnv.NhanViens.Where(s => s.ID == maNV).Select(s => new
+            var ds = db.NhanViens.Where(s => s.ID == maNV).Select(s => new
             {
                 s.ID,
                 s.HoTen,
@@ -108,7 +109,7 @@ namespace QLNS.DAO
         }
         public dynamic HienThiNVTheoLoaiNV(int maNV)
         {
-            var ds = dbnv.NhanViens.Where(s => s.IDLoaiNhanVien == maNV).Select(s => new
+            var ds = db.NhanViens.Where(s => s.IDLoaiNhanVien == maNV).Select(s => new
             {
                 s.ID,
                 s.HoTen,
@@ -123,7 +124,7 @@ namespace QLNS.DAO
         }
         public dynamic HienThiNVTheoCVNV(int maNV)
         {
-            var ds = dbnv.NhanViens.Where(s => s.IDChucVu == maNV).Select(s => new
+            var ds = db.NhanViens.Where(s => s.IDChucVu == maNV).Select(s => new
             {
                 s.ID,
                 s.HoTen,
@@ -139,7 +140,7 @@ namespace QLNS.DAO
         //Tra cứu ds theo loại nv và cvu
         public dynamic HienThiNVTraCuu(int lnv, int cv)
         {
-            var ds = dbnv.NhanViens.Where(s => s.IDLoaiNhanVien == lnv && s.IDChucVu == cv).Select(s => new
+            var ds = db.NhanViens.Where(s => s.IDLoaiNhanVien == lnv && s.IDChucVu == cv).Select(s => new
             {
                 s.ID,
                 s.HoTen,
@@ -155,32 +156,32 @@ namespace QLNS.DAO
         //Thêm nhân viên mới
         public void ThemNV(NhanVien nv, KinhNghiem kn, NhanVien_KinhNghiem nvkn)
         {
-            dbnv.NhanViens.Add(nv);
-            dbnv.KinhNghiems.Add(kn);
-            dbnv.NhanVien_KinhNghiem.Add(nvkn);
-            dbnv.SaveChanges();
+            db.NhanViens.Add(nv);
+            db.KinhNghiems.Add(kn);
+            db.NhanVien_KinhNghiem.Add(nvkn);
+            db.SaveChanges();
         }
         //sửa
-        //public bool KiemTraMaNV(NhanVien nv)
-        //{
-        //    NhanVien nvien = dbnv.NhanViens.Find(nv.ID);
-        //    if (nvien != null)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //        return false;
-        //}
+        public bool KiemTraMaNV(NhanVien nv)
+        {
+            NhanVien nvien = db.NhanViens.Find(nv.ID);
+            if (nvien != null)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
 
-        //public void SuaNV(NhanVien nv)
-        //{
-        //    NhanVien nvien = dbnv.NhanViens.Find(nv.ID);
-        //    nv.SDT = nvien.SDT;
-        //    nv.DiaChi = nvien.DiaChi;
+        public void SuaNV(NhanVien nv)
+        {
+            NhanVien nvien = db.NhanViens.Find(nv.ID);
+            nv.SDT = nvien.SDT;
+            nv.DiaChi = nvien.DiaChi;
 
-        //    dbnv.SaveChanges();
+            db.SaveChanges();
 
-        //}
+        }
 
     }
 }
