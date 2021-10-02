@@ -66,6 +66,7 @@ namespace QLNS
             this.btSanPham.TabIndex = 2;
             this.btSanPham.Text = " QUẢN LÝ SẢN PHẨM";
             this.btSanPham.UseVisualStyleBackColor = false;
+            this.btSanPham.Click += new System.EventHandler(this.btSanPham_Click);
             // 
             // qldHGbox
             // 

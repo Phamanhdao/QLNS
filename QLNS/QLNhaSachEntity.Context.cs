@@ -15,10 +15,10 @@ namespace QLNS
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class QLNhaSachEntities1 : DbContext
+    public partial class QLNhaSachEntities : DbContext
     {
-        public QLNhaSachEntities1()
-            : base("name=QLNhaSachEntities1")
+        public QLNhaSachEntities()
+            : base("name=QLNhaSachEntities")
         {
         }
     

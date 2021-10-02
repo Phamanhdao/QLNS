@@ -33,7 +33,7 @@ namespace QLNS
             this.Ql = new System.Windows.Forms.GroupBox();
             this.btQLDH = new System.Windows.Forms.Button();
             this.btQlSp = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btQLSanPham = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btThoat = new System.Windows.Forms.Button();
             this.Ql.SuspendLayout();
@@ -70,24 +70,25 @@ namespace QLNS
             this.btQlSp.BackColor = System.Drawing.Color.SeaShell;
             this.btQlSp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btQlSp.BackgroundImage")));
             this.btQlSp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btQlSp.Controls.Add(this.button1);
+            this.btQlSp.Controls.Add(this.btQLSanPham);
             this.btQlSp.Location = new System.Drawing.Point(60, 103);
             this.btQlSp.Name = "btQlSp";
             this.btQlSp.Size = new System.Drawing.Size(326, 280);
             this.btQlSp.TabIndex = 2;
             this.btQlSp.TabStop = false;
             // 
-            // button1
+            // btQLSanPham
             // 
-            this.button1.BackColor = System.Drawing.Color.Tomato;
-            this.button1.Font = new System.Drawing.Font("#9Slide03 SFU Futura_01", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(0, 241);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(326, 39);
-            this.button1.TabIndex = 2;
-            this.button1.Text = " QUẢN LÝ SẢN PHẨM";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btQLSanPham.BackColor = System.Drawing.Color.Tomato;
+            this.btQLSanPham.Font = new System.Drawing.Font("#9Slide03 SFU Futura_01", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btQLSanPham.ForeColor = System.Drawing.Color.Snow;
+            this.btQLSanPham.Location = new System.Drawing.Point(0, 241);
+            this.btQLSanPham.Name = "btQLSanPham";
+            this.btQLSanPham.Size = new System.Drawing.Size(326, 39);
+            this.btQLSanPham.TabIndex = 2;
+            this.btQLSanPham.Text = " QUẢN LÝ SẢN PHẨM";
+            this.btQLSanPham.UseVisualStyleBackColor = false;
+            this.btQLSanPham.Click += new System.EventHandler(this.btQLSanPham_Click);
             // 
             // label1
             // 
@@ -142,7 +143,7 @@ namespace QLNS
         private System.Windows.Forms.GroupBox Ql;
         private System.Windows.Forms.Button btQLDH;
         private System.Windows.Forms.GroupBox btQlSp;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btQLSanPham;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btThoat;
     }

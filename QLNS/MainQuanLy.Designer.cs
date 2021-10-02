@@ -69,6 +69,7 @@ namespace QLNS
             this.qlnv_bt.TabIndex = 1;
             this.qlnv_bt.Text = " QUẢN LÝ NHÂN VIÊN";
             this.qlnv_bt.UseVisualStyleBackColor = false;
+            this.qlnv_bt.Click += new System.EventHandler(this.qlnv_bt_Click);
             // 
             // qldHGbox
             // 
@@ -118,6 +119,7 @@ namespace QLNS
             this.qlsp_bt.TabIndex = 3;
             this.qlsp_bt.Text = " QUẢN LÝ SẢN PHẨM";
             this.qlsp_bt.UseVisualStyleBackColor = false;
+            this.qlsp_bt.Click += new System.EventHandler(this.qlsp_bt_Click);
             // 
             // qlNccGbox
             // 

@@ -203,6 +203,7 @@ namespace QLNS
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.Size = new System.Drawing.Size(174, 22);
             this.txtGiamGia.TabIndex = 12;
+            this.txtGiamGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiamGia_KeyPress);
             // 
             // label5
             // 

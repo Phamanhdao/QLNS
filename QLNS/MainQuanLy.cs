@@ -44,5 +44,21 @@ namespace QLNS
                 Close();
             }
         }
+
+        private void qlnv_bt_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FQLNV f = new FQLNV();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void qlsp_bt_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FQLSP f = new FQLSP();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }

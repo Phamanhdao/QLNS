@@ -91,6 +91,18 @@
     <Compile Include="FChiTietDonHang.Designer.cs">
       <DependentUpon>FChiTietDonHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCTNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCTNV.Designer.cs">
+      <DependentUpon>FCTNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCTSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCTSP.designer.cs">
+      <DependentUpon>FCTSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,11 +127,35 @@
     <Compile Include="FQLNhaCC.designer.cs">
       <DependentUpon>FQLNhaCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FQLNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQLNV.designer.cs">
+      <DependentUpon>FQLNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQLSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQLSP.designer.cs">
+      <DependentUpon>FQLSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FReportSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FReportSanPham.Designer.cs">
       <DependentUpon>FReportSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSach.designer.cs">
+      <DependentUpon>FSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSP.designer.cs">
+      <DependentUpon>FSP.cs</DependentUpon>
     </Compile>
     <Compile Include="KinhNghiem.cs">
       <DependentUpon>QLNhaSachEntity.tt</DependentUpon>
@@ -189,6 +225,12 @@
     <EmbeddedResource Include="FChiTietDonHang.resx">
       <DependentUpon>FChiTietDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FCTNV.resx">
+      <DependentUpon>FCTNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCTSP.resx">
+      <DependentUpon>FCTSP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FDangNhap.resx">
       <DependentUpon>FDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,8 +243,20 @@
     <EmbeddedResource Include="FQLNhaCC.resx">
       <DependentUpon>FQLNhaCC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FQLNV.resx">
+      <DependentUpon>FQLNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQLSP.resx">
+      <DependentUpon>FQLSP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FReportSanPham.resx">
       <DependentUpon>FReportSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSach.resx">
+      <DependentUpon>FSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSP.resx">
+      <DependentUpon>FSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainKeToan.resx">
       <DependentUpon>MainKeToan.cs</DependentUpon>

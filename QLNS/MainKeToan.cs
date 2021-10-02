@@ -44,5 +44,13 @@ namespace QLNS
                 Close();
             }   
         }
+
+        private void btSanPham_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FQLSP f = new FQLSP();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }

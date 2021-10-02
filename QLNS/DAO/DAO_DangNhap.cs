@@ -10,10 +10,10 @@ namespace BTL_LTCSDL.DAO
 {
     class DAO_DangNhap
     {
-        QLNhaSachEntities1 db;
+        QLNhaSachEntities db;
         public DAO_DangNhap()
         {
-            db = new QLNhaSachEntities1();
+            db = new QLNhaSachEntities();
         }
 
         public dynamic LayDSCV()

@@ -1,7 +1,7 @@
 ﻿
 namespace QLNS
 {
-    partial class FCTSP
+    partial class FSP
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,11 @@ namespace QLNS
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCTSP));
+            this.components = new System.ComponentModel.Container();
             this.lbCTSP = new System.Windows.Forms.Label();
             this.gBCTSP = new System.Windows.Forms.GroupBox();
+            this.txtMasp = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbNhaCC = new System.Windows.Forms.ComboBox();
             this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.txtSL = new System.Windows.Forms.TextBox();
@@ -44,32 +46,41 @@ namespace QLNS
             this.lbNhaCC = new System.Windows.Forms.Label();
             this.lbLoaiSP = new System.Windows.Forms.Label();
             this.lbTenSP = new System.Windows.Forms.Label();
-            this.gBChucNang = new System.Windows.Forms.GroupBox();
-            this.btThoat = new System.Windows.Forms.Button();
-            this.btThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.gvCTSP = new System.Windows.Forms.DataGridView();
+            this.gvSP = new System.Windows.Forms.DataGridView();
+            this.gBChucNang = new System.Windows.Forms.GroupBox();
+            this.btXoa = new System.Windows.Forms.Button();
+            this.btSua = new System.Windows.Forms.Button();
+            this.btThoat = new System.Windows.Forms.Button();
+            this.btLuuSP = new System.Windows.Forms.Button();
+            this.erTenSP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erGiaBan = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erSL = new System.Windows.Forms.ErrorProvider(this.components);
             this.gBCTSP.SuspendLayout();
-            this.gBChucNang.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCTSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSP)).BeginInit();
+            this.gBChucNang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erTenSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erGiaBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erSL)).BeginInit();
             this.SuspendLayout();
             // 
             // lbCTSP
             // 
             this.lbCTSP.AutoSize = true;
-            this.lbCTSP.Font = new System.Drawing.Font("#9Slide03 SFU Futura_05", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCTSP.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCTSP.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbCTSP.Location = new System.Drawing.Point(298, 31);
+            this.lbCTSP.Location = new System.Drawing.Point(331, 24);
             this.lbCTSP.Name = "lbCTSP";
-            this.lbCTSP.Size = new System.Drawing.Size(402, 50);
-            this.lbCTSP.TabIndex = 2;
-            this.lbCTSP.Text = "CHI TIẾT SẢN PHẨM";
+            this.lbCTSP.Size = new System.Drawing.Size(417, 49);
+            this.lbCTSP.TabIndex = 3;
+            this.lbCTSP.Text = "Thông Tin Sản Phẩm";
             this.lbCTSP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gBCTSP
             // 
-            this.gBCTSP.BackColor = System.Drawing.Color.MistyRose;
+            this.gBCTSP.Controls.Add(this.txtMasp);
+            this.gBCTSP.Controls.Add(this.label1);
             this.gBCTSP.Controls.Add(this.cbNhaCC);
             this.gBCTSP.Controls.Add(this.txtGiaBan);
             this.gBCTSP.Controls.Add(this.txtSL);
@@ -83,19 +94,37 @@ namespace QLNS
             this.gBCTSP.Controls.Add(this.lbLoaiSP);
             this.gBCTSP.Controls.Add(this.lbTenSP);
             this.gBCTSP.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBCTSP.Location = new System.Drawing.Point(89, 113);
+            this.gBCTSP.Location = new System.Drawing.Point(105, 117);
             this.gBCTSP.Name = "gBCTSP";
             this.gBCTSP.Size = new System.Drawing.Size(872, 274);
-            this.gBCTSP.TabIndex = 7;
+            this.gBCTSP.TabIndex = 8;
             this.gBCTSP.TabStop = false;
             this.gBCTSP.Text = "Thông tin chi tiết";
+            // 
+            // txtMasp
+            // 
+            this.txtMasp.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMasp.Location = new System.Drawing.Point(662, 64);
+            this.txtMasp.Name = "txtMasp";
+            this.txtMasp.Size = new System.Drawing.Size(142, 27);
+            this.txtMasp.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(510, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 19);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Mã sản phẩm:";
             // 
             // cbNhaCC
             // 
             this.cbNhaCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNhaCC.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNhaCC.FormattingEnabled = true;
-            this.cbNhaCC.Location = new System.Drawing.Point(662, 60);
+            this.cbNhaCC.Location = new System.Drawing.Point(662, 115);
             this.cbNhaCC.Name = "cbNhaCC";
             this.cbNhaCC.Size = new System.Drawing.Size(200, 27);
             this.cbNhaCC.TabIndex = 24;
@@ -107,6 +136,8 @@ namespace QLNS
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(200, 27);
             this.txtGiaBan.TabIndex = 23;
+            this.txtGiaBan.TextChanged += new System.EventHandler(this.txtGiaBan_TextChanged);
+            this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaBan_KeyPress);
             // 
             // txtSL
             // 
@@ -115,6 +146,7 @@ namespace QLNS
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(200, 27);
             this.txtSL.TabIndex = 22;
+            this.txtSL.TextChanged += new System.EventHandler(this.txtSL_TextChanged);
             // 
             // lbGiaBan
             // 
@@ -129,7 +161,7 @@ namespace QLNS
             // dPNgayNhapHang
             // 
             this.dPNgayNhapHang.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dPNgayNhapHang.Location = new System.Drawing.Point(662, 117);
+            this.dPNgayNhapHang.Location = new System.Drawing.Point(662, 164);
             this.dPNgayNhapHang.Name = "dPNgayNhapHang";
             this.dPNgayNhapHang.Size = new System.Drawing.Size(200, 27);
             this.dPNgayNhapHang.TabIndex = 18;
@@ -138,7 +170,7 @@ namespace QLNS
             // 
             this.lbNgayNhapHang.AutoSize = true;
             this.lbNgayNhapHang.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgayNhapHang.Location = new System.Drawing.Point(510, 122);
+            this.lbNgayNhapHang.Location = new System.Drawing.Point(510, 172);
             this.lbNgayNhapHang.Name = "lbNgayNhapHang";
             this.lbNgayNhapHang.Size = new System.Drawing.Size(130, 19);
             this.lbNgayNhapHang.TabIndex = 13;
@@ -171,12 +203,13 @@ namespace QLNS
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(200, 27);
             this.txtTenSP.TabIndex = 7;
+            this.txtTenSP.TextChanged += new System.EventHandler(this.txtTenSP_TextChanged);
             // 
             // lbNhaCC
             // 
             this.lbNhaCC.AutoSize = true;
             this.lbNhaCC.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNhaCC.Location = new System.Drawing.Point(510, 67);
+            this.lbNhaCC.Location = new System.Drawing.Point(510, 115);
             this.lbNhaCC.Name = "lbNhaCC";
             this.lbNhaCC.Size = new System.Drawing.Size(112, 19);
             this.lbNhaCC.TabIndex = 3;
@@ -202,15 +235,72 @@ namespace QLNS
             this.lbTenSP.TabIndex = 0;
             this.lbTenSP.Text = "Tên sản phẩm:";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.gvSP);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(59, 548);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(942, 280);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông tin chung";
+            // 
+            // gvSP
+            // 
+            this.gvSP.AllowUserToOrderColumns = true;
+            this.gvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvSP.Location = new System.Drawing.Point(6, 21);
+            this.gvSP.Name = "gvSP";
+            this.gvSP.RowHeadersWidth = 51;
+            this.gvSP.RowTemplate.Height = 24;
+            this.gvSP.Size = new System.Drawing.Size(930, 253);
+            this.gvSP.TabIndex = 9;
+            this.gvSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSP_CellClick);
+            // 
             // gBChucNang
             // 
+            this.gBChucNang.Controls.Add(this.btXoa);
+            this.gBChucNang.Controls.Add(this.btSua);
             this.gBChucNang.Controls.Add(this.btThoat);
-            this.gBChucNang.Controls.Add(this.btThem);
-            this.gBChucNang.Location = new System.Drawing.Point(713, 420);
+            this.gBChucNang.Controls.Add(this.btLuuSP);
+            this.gBChucNang.Location = new System.Drawing.Point(368, 419);
             this.gBChucNang.Name = "gBChucNang";
-            this.gBChucNang.Size = new System.Drawing.Size(289, 105);
-            this.gBChucNang.TabIndex = 9;
+            this.gBChucNang.Size = new System.Drawing.Size(599, 105);
+            this.gBChucNang.TabIndex = 13;
             this.gBChucNang.TabStop = false;
+            // 
+            // btXoa
+            // 
+            this.btXoa.AutoSize = true;
+            this.btXoa.BackColor = System.Drawing.Color.Firebrick;
+            this.btXoa.FlatAppearance.BorderSize = 2;
+            this.btXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXoa.ForeColor = System.Drawing.Color.White;
+            this.btXoa.Location = new System.Drawing.Point(324, 21);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(103, 70);
+            this.btXoa.TabIndex = 5;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // btSua
+            // 
+            this.btSua.AutoSize = true;
+            this.btSua.BackColor = System.Drawing.Color.Firebrick;
+            this.btSua.FlatAppearance.BorderSize = 2;
+            this.btSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSua.ForeColor = System.Drawing.Color.White;
+            this.btSua.Location = new System.Drawing.Point(174, 21);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(103, 70);
+            this.btSua.TabIndex = 4;
+            this.btSua.Text = "Sửa";
+            this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btThoat
             // 
@@ -221,7 +311,7 @@ namespace QLNS
             this.btThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThoat.ForeColor = System.Drawing.Color.White;
-            this.btThoat.Location = new System.Drawing.Point(155, 21);
+            this.btThoat.Location = new System.Drawing.Point(470, 21);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(119, 70);
             this.btThoat.TabIndex = 3;
@@ -229,69 +319,60 @@ namespace QLNS
             this.btThoat.UseVisualStyleBackColor = false;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // btThem
+            // btLuuSP
             // 
-            this.btThem.AutoSize = true;
-            this.btThem.BackColor = System.Drawing.Color.Firebrick;
-            this.btThem.FlatAppearance.BorderSize = 2;
-            this.btThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.ForeColor = System.Drawing.Color.White;
-            this.btThem.Location = new System.Drawing.Point(23, 21);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(103, 70);
-            this.btThem.TabIndex = 1;
-            this.btThem.Text = "Thêm";
-            this.btThem.UseVisualStyleBackColor = false;
-            this.btThem.Click += new System.EventHandler(this.btThemNV_Click);
+            this.btLuuSP.AutoSize = true;
+            this.btLuuSP.BackColor = System.Drawing.Color.Firebrick;
+            this.btLuuSP.FlatAppearance.BorderSize = 2;
+            this.btLuuSP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btLuuSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLuuSP.ForeColor = System.Drawing.Color.White;
+            this.btLuuSP.Location = new System.Drawing.Point(29, 21);
+            this.btLuuSP.Name = "btLuuSP";
+            this.btLuuSP.Size = new System.Drawing.Size(103, 70);
+            this.btLuuSP.TabIndex = 1;
+            this.btLuuSP.Text = "Lưu";
+            this.btLuuSP.UseVisualStyleBackColor = false;
+            this.btLuuSP.Click += new System.EventHandler(this.btLuuSP_Click);
             // 
-            // groupBox2
+            // erTenSP
             // 
-            this.groupBox2.Controls.Add(this.gvCTSP);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(60, 548);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(942, 280);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin chung";
+            this.erTenSP.ContainerControl = this;
+            this.erTenSP.RightToLeftChanged += new System.EventHandler(this.btLuuSP_Click);
             // 
-            // gvCTSP
+            // erGiaBan
             // 
-            this.gvCTSP.AllowUserToOrderColumns = true;
-            this.gvCTSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvCTSP.Location = new System.Drawing.Point(6, 21);
-            this.gvCTSP.Name = "gvCTSP";
-            this.gvCTSP.RowHeadersWidth = 51;
-            this.gvCTSP.RowTemplate.Height = 24;
-            this.gvCTSP.Size = new System.Drawing.Size(930, 253);
-            this.gvCTSP.TabIndex = 9;
-            this.gvCTSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCTSP_CellClick);
+            this.erGiaBan.ContainerControl = this;
+            this.erGiaBan.RightToLeftChanged += new System.EventHandler(this.btLuuSP_Click);
             // 
-            // FCTSP
+            // erSL
+            // 
+            this.erSL.ContainerControl = this;
+            this.erSL.RightToLeftChanged += new System.EventHandler(this.btLuuSP_Click);
+            // 
+            // FSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1030, 840);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gBChucNang);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gBCTSP);
             this.Controls.Add(this.lbCTSP);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FCTSP";
+            this.Name = "FSP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FCTSP";
-            this.Load += new System.EventHandler(this.FCTSP_Load);
+            this.Text = "FSP";
+            this.Load += new System.EventHandler(this.FSP_Load);
             this.gBCTSP.ResumeLayout(false);
             this.gBCTSP.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvSP)).EndInit();
             this.gBChucNang.ResumeLayout(false);
             this.gBChucNang.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvCTSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erTenSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erGiaBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erSL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,6 +382,9 @@ namespace QLNS
 
         private System.Windows.Forms.Label lbCTSP;
         private System.Windows.Forms.GroupBox gBCTSP;
+        private System.Windows.Forms.ComboBox cbNhaCC;
+        private System.Windows.Forms.TextBox txtGiaBan;
+        private System.Windows.Forms.TextBox txtSL;
         private System.Windows.Forms.Label lbGiaBan;
         private System.Windows.Forms.DateTimePicker dPNgayNhapHang;
         private System.Windows.Forms.Label lbNgayNhapHang;
@@ -310,13 +394,17 @@ namespace QLNS
         private System.Windows.Forms.Label lbNhaCC;
         private System.Windows.Forms.Label lbLoaiSP;
         private System.Windows.Forms.Label lbTenSP;
-        private System.Windows.Forms.TextBox txtSL;
-        private System.Windows.Forms.GroupBox gBChucNang;
-        private System.Windows.Forms.Button btThoat;
-        private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView gvCTSP;
-        private System.Windows.Forms.TextBox txtGiaBan;
-        private System.Windows.Forms.ComboBox cbNhaCC;
+        private System.Windows.Forms.DataGridView gvSP;
+        private System.Windows.Forms.GroupBox gBChucNang;
+        private System.Windows.Forms.Button btXoa;
+        private System.Windows.Forms.Button btSua;
+        private System.Windows.Forms.Button btThoat;
+        private System.Windows.Forms.Button btLuuSP;
+        private System.Windows.Forms.ErrorProvider erTenSP;
+        private System.Windows.Forms.ErrorProvider erGiaBan;
+        private System.Windows.Forms.ErrorProvider erSL;
+        private System.Windows.Forms.TextBox txtMasp;
+        private System.Windows.Forms.Label label1;
     }
 }
