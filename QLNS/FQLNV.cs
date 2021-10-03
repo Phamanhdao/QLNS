@@ -30,6 +30,7 @@ namespace QLNS
 
         private void btTaoNV_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FCTNV f = new FCTNV();
             f.truyenNV(nv);
             f.ShowDialog();

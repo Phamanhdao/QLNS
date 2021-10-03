@@ -93,12 +93,14 @@ namespace QLNS
 
         private void gvCTSP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtTenSP.Text = gvCTSP.Rows[e.RowIndex].Cells[1].Value.ToString();
-            cbLoaiSP.Text = gvCTSP.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtSL.Text = gvCTSP.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtGiaBan.Text = gvCTSP.Rows[e.RowIndex].Cells[4].Value.ToString();
-            cbNhaCC.Text = gvCTSP.Rows[e.RowIndex].Cells[5].Value.ToString();
-            dPNgayNhapHang.Value = DateTime.Parse(gvCTSP.Rows[e.RowIndex].Cells[6].Value.ToString());
+            if (e.RowIndex >= 0 && e.RowIndex < gvCTSP.Rows.Count) {
+                txtTenSP.Text = gvCTSP.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cbLoaiSP.Text = gvCTSP.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtSL.Text = gvCTSP.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtGiaBan.Text = gvCTSP.Rows[e.RowIndex].Cells[4].Value.ToString();
+                cbNhaCC.Text = gvCTSP.Rows[e.RowIndex].Cells[5].Value.ToString();
+                dPNgayNhapHang.Value = DateTime.Parse(gvCTSP.Rows[e.RowIndex].Cells[6].Value.ToString());
+            }
         }
 
         private void btThem_MouseHover(object sender, EventArgs e)

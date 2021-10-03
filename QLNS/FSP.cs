@@ -92,7 +92,8 @@ namespace QLNS
             HienThiDLDGFSP(gvSP);
             bSP.HienThiDSNhaCCLenCb(cbNhaCC);
             bSP.HienThiDSLoaiSPKhongCoSachLenCb(cbLoaiSP);
-            btLuuSP.Enabled = false;
+            btLuuSP.Enabled = true;
+            btSua.Enabled = false;
             btXoa.Enabled = false;
         }
 
@@ -109,6 +110,7 @@ namespace QLNS
             dPNgayNhapHang.Value = DateTime.Parse(gvSP.Rows[e.RowIndex].Cells[6].Value.ToString());
             
             btXoa.Enabled = true;
+            btSua.Enabled = true;
             
         }
         //Xóa sản phẩm
@@ -169,7 +171,6 @@ namespace QLNS
 
         private void btLuuSP_Click(object sender, EventArgs e)
         {
-
             if (txtTenSP.TextLength == 0)
                 erTenSP.SetError(txtTenSP, "Vui lòng nhập tên sản phẩm!");
             if (txtGiaBan.TextLength == 0)

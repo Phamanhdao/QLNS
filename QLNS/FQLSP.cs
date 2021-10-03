@@ -76,6 +76,7 @@ namespace QLNS
         //chuyển qua form chi tiêt sản phẩm
         private void btCTSP_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FCTSP f = new FCTSP();
             f.truyenNV(nv);
             f.ShowDialog();

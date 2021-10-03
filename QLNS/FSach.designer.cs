@@ -158,6 +158,7 @@ namespace QLNS
             this.txtSL.Size = new System.Drawing.Size(200, 27);
             this.txtSL.TabIndex = 37;
             this.txtSL.TextChanged += new System.EventHandler(this.txtSL_TextChanged);
+            this.txtSL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSL_KeyPress);
             // 
             // lbSoLuong
             // 
@@ -177,6 +178,7 @@ namespace QLNS
             this.txtGiaBan.Size = new System.Drawing.Size(200, 27);
             this.txtGiaBan.TabIndex = 35;
             this.txtGiaBan.TextChanged += new System.EventHandler(this.txtGiaBan_TextChanged);
+            this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaBan_KeyPress);
             // 
             // lbGiaBan
             // 
@@ -262,6 +264,7 @@ namespace QLNS
             this.txtNamXB.Size = new System.Drawing.Size(200, 27);
             this.txtNamXB.TabIndex = 26;
             this.txtNamXB.TextChanged += new System.EventHandler(this.txtNamXB_TextChanged);
+            this.txtNamXB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamXB_KeyPress);
             // 
             // lbNamXB
             // 
